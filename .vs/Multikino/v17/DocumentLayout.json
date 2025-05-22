@@ -3,48 +3,93 @@
   "WorkspaceRootPath": "D:\\Visual Studio\\repos\\Multikino\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D9579AC5-0D27-4E0A-BB1D-F3F57B89341F}|MultikinoDataAccess\\MultikinoDataAccess.csproj|D:\\Visual Studio\\repos\\Multikino\\multikinodataaccess\\data\\multikinocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D9579AC5-0D27-4E0A-BB1D-F3F57B89341F}|MultikinoDataAccess\\MultikinoDataAccess.csproj|solutionrelative:multikinodataaccess\\data\\multikinocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/MULTIKINODB_3a6ba2168d4d443e8d25c348e92fd446/True/SqlTable/dbo.LogZdarzen.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A5420958-0CA9-466E-BB6D-7BEADA66582A}|MultikinoAdmin\\MultikinoAdmin.csproj|D:\\Visual Studio\\repos\\Multikino\\MultikinoAdmin\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A5420958-0CA9-466E-BB6D-7BEADA66582A}|MultikinoAdmin\\MultikinoAdmin.csproj|solutionrelative:MultikinoAdmin\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/MULTIKINODB_3a6ba2168d4d443e8d25c348e92fd446/True/SqlTable/dbo.Film.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D9579AC5-0D27-4E0A-BB1D-F3F57B89341F}|MultikinoDataAccess\\MultikinoDataAccess.csproj|d:\\visual studio\\repos\\multikino\\multikinodataaccess\\data\\databaseinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D9579AC5-0D27-4E0A-BB1D-F3F57B89341F}|MultikinoDataAccess\\MultikinoDataAccess.csproj|solutionrelative:multikinodataaccess\\data\\databaseinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/MULTIKINODB_3a6ba2168d4d443e8d25c348e92fd446/True/SqlTable/dbo.HistoriaBiletow.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A5420958-0CA9-466E-BB6D-7BEADA66582A}|MultikinoAdmin\\MultikinoAdmin.csproj|D:\\Visual Studio\\repos\\Multikino\\multikinoadmin\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{A5420958-0CA9-466E-BB6D-7BEADA66582A}|MultikinoAdmin\\MultikinoAdmin.csproj|solutionrelative:multikinoadmin\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/MULTIKINODB_3a6ba2168d4d443e8d25c348e92fd446/True/SqlTable/dbo.Sala.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A5420958-0CA9-466E-BB6D-7BEADA66582A}|MultikinoAdmin\\MultikinoAdmin.csproj|D:\\Visual Studio\\repos\\Multikino\\MultikinoAdmin\\Services\\DatabaseService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A5420958-0CA9-466E-BB6D-7BEADA66582A}|MultikinoAdmin\\MultikinoAdmin.csproj|solutionrelative:MultikinoAdmin\\Services\\DatabaseService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/MULTIKINODB_3a6ba2168d4d443e8d25c348e92fd446/True/SqlTable/dbo.Seans.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A5420958-0CA9-466E-BB6D-7BEADA66582A}|MultikinoAdmin\\MultikinoAdmin.csproj|d:\\visual studio\\repos\\multikino\\multikinoadmin\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A5420958-0CA9-466E-BB6D-7BEADA66582A}|MultikinoAdmin\\MultikinoAdmin.csproj|solutionrelative:multikinoadmin\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A5420958-0CA9-466E-BB6D-7BEADA66582A}|MultikinoAdmin\\MultikinoAdmin.csproj|d:\\visual studio\\repos\\multikino\\multikinoadmin\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A5420958-0CA9-466E-BB6D-7BEADA66582A}|MultikinoAdmin\\MultikinoAdmin.csproj|solutionrelative:multikinoadmin\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D9579AC5-0D27-4E0A-BB1D-F3F57B89341F}|MultikinoDataAccess\\MultikinoDataAccess.csproj|D:\\Visual Studio\\repos\\Multikino\\multikinodataaccess\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{D9579AC5-0D27-4E0A-BB1D-F3F57B89341F}|MultikinoDataAccess\\MultikinoDataAccess.csproj|solutionrelative:multikinodataaccess\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A5420958-0CA9-466E-BB6D-7BEADA66582A}|MultikinoAdmin\\MultikinoAdmin.csproj|D:\\Visual Studio\\repos\\Multikino\\MultikinoAdmin\\Services\\UserService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A5420958-0CA9-466E-BB6D-7BEADA66582A}|MultikinoAdmin\\MultikinoAdmin.csproj|solutionrelative:MultikinoAdmin\\Services\\UserService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\usate\\AppData\\Local\\Temp\\5yfmraeu..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D9579AC5-0D27-4E0A-BB1D-F3F57B89341F}|MultikinoDataAccess\\MultikinoDataAccess.csproj|D:\\Visual Studio\\repos\\Multikino\\multikinodataaccess\\initializedatabase.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
       "RelativeMoniker": "D:0:0:{D9579AC5-0D27-4E0A-BB1D-F3F57B89341F}|MultikinoDataAccess\\MultikinoDataAccess.csproj|solutionrelative:multikinodataaccess\\initializedatabase.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{D9579AC5-0D27-4E0A-BB1D-F3F57B89341F}|MultikinoDataAccess\\MultikinoDataAccess.csproj|D:\\Visual Studio\\repos\\Multikino\\multikinodataaccess\\models\\uzytkownik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9579AC5-0D27-4E0A-BB1D-F3F57B89341F}|MultikinoDataAccess\\MultikinoDataAccess.csproj|solutionrelative:multikinodataaccess\\models\\uzytkownik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D9579AC5-0D27-4E0A-BB1D-F3F57B89341F}|MultikinoDataAccess\\MultikinoDataAccess.csproj|D:\\Visual Studio\\repos\\Multikino\\multikinodataaccess\\models\\logzdarzen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D9579AC5-0D27-4E0A-BB1D-F3F57B89341F}|MultikinoDataAccess\\MultikinoDataAccess.csproj|solutionrelative:multikinodataaccess\\models\\logzdarzen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9579AC5-0D27-4E0A-BB1D-F3F57B89341F}|MultikinoDataAccess\\MultikinoDataAccess.csproj|D:\\Visual Studio\\repos\\Multikino\\multikinodataaccess\\data\\multikinocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9579AC5-0D27-4E0A-BB1D-F3F57B89341F}|MultikinoDataAccess\\MultikinoDataAccess.csproj|solutionrelative:multikinodataaccess\\data\\multikinocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5420958-0CA9-466E-BB6D-7BEADA66582A}|MultikinoAdmin\\MultikinoAdmin.csproj|d:\\visual studio\\repos\\multikino\\multikinoadmin\\services\\filmservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5420958-0CA9-466E-BB6D-7BEADA66582A}|MultikinoAdmin\\MultikinoAdmin.csproj|solutionrelative:multikinoadmin\\services\\filmservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5420958-0CA9-466E-BB6D-7BEADA66582A}|MultikinoAdmin\\MultikinoAdmin.csproj|d:\\visual studio\\repos\\multikino\\multikinoadmin\\forms\\filmyform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5420958-0CA9-466E-BB6D-7BEADA66582A}|MultikinoAdmin\\MultikinoAdmin.csproj|solutionrelative:multikinoadmin\\forms\\filmyform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5420958-0CA9-466E-BB6D-7BEADA66582A}|MultikinoAdmin\\MultikinoAdmin.csproj|d:\\visual studio\\repos\\multikino\\multikinoadmin\\forms\\filmyform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A5420958-0CA9-466E-BB6D-7BEADA66582A}|MultikinoAdmin\\MultikinoAdmin.csproj|solutionrelative:multikinoadmin\\forms\\filmyform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/MULTIKINODB_3a6ba2168d4d443e8d25c348e92fd446/True/SqlTable/dbo.Uzytkownik.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5420958-0CA9-466E-BB6D-7BEADA66582A}|MultikinoAdmin\\MultikinoAdmin.csproj|D:\\Visual Studio\\repos\\Multikino\\multikinoadmin\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5420958-0CA9-466E-BB6D-7BEADA66582A}|MultikinoAdmin\\MultikinoAdmin.csproj|solutionrelative:multikinoadmin\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5420958-0CA9-466E-BB6D-7BEADA66582A}|MultikinoAdmin\\MultikinoAdmin.csproj|D:\\Visual Studio\\repos\\Multikino\\multikinoadmin\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A5420958-0CA9-466E-BB6D-7BEADA66582A}|MultikinoAdmin\\MultikinoAdmin.csproj|solutionrelative:multikinoadmin\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9579AC5-0D27-4E0A-BB1D-F3F57B89341F}|MultikinoDataAccess\\MultikinoDataAccess.csproj|D:\\Visual Studio\\repos\\Multikino\\multikinodataaccess\\data\\databaseinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9579AC5-0D27-4E0A-BB1D-F3F57B89341F}|MultikinoDataAccess\\MultikinoDataAccess.csproj|solutionrelative:multikinodataaccess\\data\\databaseinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5420958-0CA9-466E-BB6D-7BEADA66582A}|MultikinoAdmin\\MultikinoAdmin.csproj|d:\\visual studio\\repos\\multikino\\multikinoadmin\\forms\\biletyform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A5420958-0CA9-466E-BB6D-7BEADA66582A}|MultikinoAdmin\\MultikinoAdmin.csproj|solutionrelative:multikinoadmin\\forms\\biletyform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5420958-0CA9-466E-BB6D-7BEADA66582A}|MultikinoAdmin\\MultikinoAdmin.csproj|D:\\Visual Studio\\repos\\Multikino\\MultikinoAdmin\\Services\\DatabaseService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5420958-0CA9-466E-BB6D-7BEADA66582A}|MultikinoAdmin\\MultikinoAdmin.csproj|solutionrelative:MultikinoAdmin\\Services\\DatabaseService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5420958-0CA9-466E-BB6D-7BEADA66582A}|MultikinoAdmin\\MultikinoAdmin.csproj|D:\\Visual Studio\\repos\\Multikino\\MultikinoAdmin\\Services\\UserService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5420958-0CA9-466E-BB6D-7BEADA66582A}|MultikinoAdmin\\MultikinoAdmin.csproj|solutionrelative:MultikinoAdmin\\Services\\UserService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5420958-0CA9-466E-BB6D-7BEADA66582A}|MultikinoAdmin\\MultikinoAdmin.csproj|d:\\visual studio\\repos\\multikino\\multikinoadmin\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A5420958-0CA9-466E-BB6D-7BEADA66582A}|MultikinoAdmin\\MultikinoAdmin.csproj|solutionrelative:multikinoadmin\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9579AC5-0D27-4E0A-BB1D-F3F57B89341F}|MultikinoDataAccess\\MultikinoDataAccess.csproj|D:\\Visual Studio\\repos\\Multikino\\multikinodataaccess\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9579AC5-0D27-4E0A-BB1D-F3F57B89341F}|MultikinoDataAccess\\MultikinoDataAccess.csproj|solutionrelative:multikinodataaccess\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9579AC5-0D27-4E0A-BB1D-F3F57B89341F}|MultikinoDataAccess\\MultikinoDataAccess.csproj|D:\\Visual Studio\\repos\\Multikino\\multikinodataaccess\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{D9579AC5-0D27-4E0A-BB1D-F3F57B89341F}|MultikinoDataAccess\\MultikinoDataAccess.csproj|solutionrelative:multikinodataaccess\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5420958-0CA9-466E-BB6D-7BEADA66582A}|MultikinoAdmin\\MultikinoAdmin.csproj|D:\\Visual Studio\\repos\\Multikino\\MultikinoAdmin\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5420958-0CA9-466E-BB6D-7BEADA66582A}|MultikinoAdmin\\MultikinoAdmin.csproj|solutionrelative:MultikinoAdmin\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D9579AC5-0D27-4E0A-BB1D-F3F57B89341F}|MultikinoDataAccess\\MultikinoDataAccess.csproj|D:\\Visual Studio\\repos\\Multikino\\multikinodataaccess\\models\\historiabiletow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -71,14 +116,6 @@
       "RelativeMoniker": "D:0:0:{D9579AC5-0D27-4E0A-BB1D-F3F57B89341F}|MultikinoDataAccess\\MultikinoDataAccess.csproj|solutionrelative:multikinodataaccess\\models\\film.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D9579AC5-0D27-4E0A-BB1D-F3F57B89341F}|MultikinoDataAccess\\MultikinoDataAccess.csproj|D:\\Visual Studio\\repos\\Multikino\\multikinodataaccess\\models\\uzytkownik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D9579AC5-0D27-4E0A-BB1D-F3F57B89341F}|MultikinoDataAccess\\MultikinoDataAccess.csproj|solutionrelative:multikinodataaccess\\models\\uzytkownik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D9579AC5-0D27-4E0A-BB1D-F3F57B89341F}|MultikinoDataAccess\\MultikinoDataAccess.csproj|D:\\Visual Studio\\repos\\Multikino\\multikinodataaccess\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D9579AC5-0D27-4E0A-BB1D-F3F57B89341F}|MultikinoDataAccess\\MultikinoDataAccess.csproj|solutionrelative:multikinodataaccess\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/D__VISUAL_STUDIO_REPOS_MULTIKINO_MULTIKINOADMIN_APP_DATA_KINO.MDF/True/SqlTable/dbo.Uzytkownik.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
@@ -89,7 +126,14 @@
       "RelativeMoniker": "D:0:0:{A5420958-0CA9-466E-BB6D-7BEADA66582A}|MultikinoAdmin\\MultikinoAdmin.csproj|solutionrelative:multikinoadmin\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\usate\\AppData\\Local\\Temp\\xhjgswoy..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
+      "AbsoluteMoniker": "D:0:0:{D9579AC5-0D27-4E0A-BB1D-F3F57B89341F}|MultikinoDataAccess\\MultikinoDataAccess.csproj|d:\\visual studio\\repos\\multikino\\multikinodataaccess\\initializedatabase.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
+      "RelativeMoniker": "D:0:0:{D9579AC5-0D27-4E0A-BB1D-F3F57B89341F}|MultikinoDataAccess\\MultikinoDataAccess.csproj|solutionrelative:multikinodataaccess\\initializedatabase.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\usate\\AppData\\Local\\Temp\\5yfmraeu..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\usate\\AppData\\Local\\Temp\\5yfmraeu..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|ResultFrame"
     }
   ],
   "DocumentGroupContainers": [
@@ -99,7 +143,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -108,84 +152,204 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "dbo.HistoriaBiletow [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/MULTIKINODB_3a6ba2168d4d443e8d25c348e92fd446/True/SqlTable/dbo.HistoriaBiletow.sql",
+              "ToolTip": "dbo.HistoriaBiletow [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-05-22T19:38:30.623Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "dbo.Sala [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/MULTIKINODB_3a6ba2168d4d443e8d25c348e92fd446/True/SqlTable/dbo.Sala.sql",
+              "ToolTip": "dbo.Sala [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-05-22T19:38:21.285Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "dbo.Seans [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/MULTIKINODB_3a6ba2168d4d443e8d25c348e92fd446/True/SqlTable/dbo.Seans.sql",
+              "ToolTip": "dbo.Seans [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-05-22T19:38:19.085Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SQLQuery2.sql ",
+              "DocumentMoniker": "C:\\Users\\usate\\AppData\\Local\\Temp\\5yfmraeu..sql",
+              "ToolTip": "SQLQuery2.sql *",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-05-22T19:36:39.571Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "dbo.Film [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/MULTIKINODB_3a6ba2168d4d443e8d25c348e92fd446/True/SqlTable/dbo.Film.sql",
+              "ToolTip": "dbo.Film [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-05-22T19:27:51.355Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "dbo.Uzytkownik [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/MULTIKINODB_3a6ba2168d4d443e8d25c348e92fd446/True/SqlTable/dbo.Uzytkownik.sql",
+              "ToolTip": "dbo.Uzytkownik [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-05-22T19:27:48.535Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "dbo.LogZdarzen [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/MULTIKINODB_3a6ba2168d4d443e8d25c348e92fd446/True/SqlTable/dbo.LogZdarzen.sql",
+              "ToolTip": "dbo.LogZdarzen [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-05-22T19:27:44.227Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "FilmyForm.cs",
+              "DocumentMoniker": "D:\\Visual Studio\\repos\\Multikino\\MultikinoAdmin\\Forms\\FilmyForm.cs",
+              "RelativeDocumentMoniker": "MultikinoAdmin\\Forms\\FilmyForm.cs",
+              "ToolTip": "D:\\Visual Studio\\repos\\Multikino\\MultikinoAdmin\\Forms\\FilmyForm.cs",
+              "RelativeToolTip": "MultikinoAdmin\\Forms\\FilmyForm.cs",
+              "ViewState": "AgIAAKcAAAAAAAAAAAAEwN4AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T19:25:44.595Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "FilmService.cs",
+              "DocumentMoniker": "D:\\Visual Studio\\repos\\Multikino\\MultikinoAdmin\\Services\\FilmService.cs",
+              "RelativeDocumentMoniker": "MultikinoAdmin\\Services\\FilmService.cs",
+              "ToolTip": "D:\\Visual Studio\\repos\\Multikino\\MultikinoAdmin\\Services\\FilmService.cs",
+              "RelativeToolTip": "MultikinoAdmin\\Services\\FilmService.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAADwv4gAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T19:14:03.947Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "BiletyForm.cs [Design]",
+              "DocumentMoniker": "D:\\Visual Studio\\repos\\Multikino\\MultikinoAdmin\\Forms\\BiletyForm.cs",
+              "RelativeDocumentMoniker": "MultikinoAdmin\\Forms\\BiletyForm.cs",
+              "ToolTip": "D:\\Visual Studio\\repos\\Multikino\\MultikinoAdmin\\Forms\\BiletyForm.cs [Design]",
+              "RelativeToolTip": "MultikinoAdmin\\Forms\\BiletyForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T18:37:36.908Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "FilmyForm.cs [Design]",
+              "DocumentMoniker": "D:\\Visual Studio\\repos\\Multikino\\MultikinoAdmin\\Forms\\FilmyForm.cs",
+              "RelativeDocumentMoniker": "MultikinoAdmin\\Forms\\FilmyForm.cs",
+              "ToolTip": "D:\\Visual Studio\\repos\\Multikino\\MultikinoAdmin\\Forms\\FilmyForm.cs [Design]",
+              "RelativeToolTip": "MultikinoAdmin\\Forms\\FilmyForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T18:37:34.829Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "DatabaseInitializer.cs",
               "DocumentMoniker": "D:\\Visual Studio\\repos\\Multikino\\MultikinoDataAccess\\Data\\DatabaseInitializer.cs",
               "RelativeDocumentMoniker": "MultikinoDataAccess\\Data\\DatabaseInitializer.cs",
               "ToolTip": "D:\\Visual Studio\\repos\\Multikino\\MultikinoDataAccess\\Data\\DatabaseInitializer.cs",
               "RelativeToolTip": "MultikinoDataAccess\\Data\\DatabaseInitializer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAvwAYAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-22T15:22:38.2Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 9,
               "Title": "MultikinoContext.cs",
               "DocumentMoniker": "D:\\Visual Studio\\repos\\Multikino\\MultikinoDataAccess\\Data\\MultikinoContext.cs",
               "RelativeDocumentMoniker": "MultikinoDataAccess\\Data\\MultikinoContext.cs",
               "ToolTip": "D:\\Visual Studio\\repos\\Multikino\\MultikinoDataAccess\\Data\\MultikinoContext.cs",
               "RelativeToolTip": "MultikinoDataAccess\\Data\\MultikinoContext.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAowBQAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAEwFEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-22T14:04:29.548Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 23,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Visual Studio\\repos\\Multikino\\MultikinoAdmin\\Program.cs",
               "RelativeDocumentMoniker": "MultikinoAdmin\\Program.cs",
               "ToolTip": "D:\\Visual Studio\\repos\\Multikino\\MultikinoAdmin\\Program.cs",
               "RelativeToolTip": "MultikinoAdmin\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAcwCcAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-18T20:34:18.35Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 20,
               "Title": "App.config",
               "DocumentMoniker": "D:\\Visual Studio\\repos\\Multikino\\MultikinoAdmin\\App.config",
               "RelativeDocumentMoniker": "MultikinoAdmin\\App.config",
               "ToolTip": "D:\\Visual Studio\\repos\\Multikino\\MultikinoAdmin\\App.config",
               "RelativeToolTip": "MultikinoAdmin\\App.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABHAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
               "WhenOpened": "2025-05-18T18:32:08.734Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 18,
               "Title": "DatabaseService.cs",
               "DocumentMoniker": "D:\\Visual Studio\\repos\\Multikino\\MultikinoAdmin\\Services\\DatabaseService.cs",
               "RelativeDocumentMoniker": "MultikinoAdmin\\Services\\DatabaseService.cs",
               "ToolTip": "D:\\Visual Studio\\repos\\Multikino\\MultikinoAdmin\\Services\\DatabaseService.cs",
               "RelativeToolTip": "MultikinoAdmin\\Services\\DatabaseService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAYwAYAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-18T20:26:12.844Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 14,
               "Title": "LoginForm.cs",
               "DocumentMoniker": "D:\\Visual Studio\\repos\\Multikino\\MultikinoAdmin\\Forms\\LoginForm.cs",
               "RelativeDocumentMoniker": "MultikinoAdmin\\Forms\\LoginForm.cs",
               "ToolTip": "D:\\Visual Studio\\repos\\Multikino\\MultikinoAdmin\\Forms\\LoginForm.cs",
               "RelativeToolTip": "MultikinoAdmin\\Forms\\LoginForm.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAewCgAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAHcAAAAAAAAAAAAkwFwAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-22T14:31:18.584Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 15,
               "Title": "LoginForm.cs [Design]",
               "DocumentMoniker": "D:\\Visual Studio\\repos\\Multikino\\MultikinoAdmin\\Forms\\LoginForm.cs",
               "RelativeDocumentMoniker": "MultikinoAdmin\\Forms\\LoginForm.cs",
@@ -197,34 +361,34 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 22,
               "Title": "App.config",
               "DocumentMoniker": "D:\\Visual Studio\\repos\\Multikino\\MultikinoDataAccess\\App.config",
               "RelativeDocumentMoniker": "MultikinoDataAccess\\App.config",
               "ToolTip": "D:\\Visual Studio\\repos\\Multikino\\MultikinoDataAccess\\App.config",
               "RelativeToolTip": "MultikinoDataAccess\\App.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
               "WhenOpened": "2025-05-22T14:04:43.636Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 19,
               "Title": "UserService.cs",
               "DocumentMoniker": "D:\\Visual Studio\\repos\\Multikino\\MultikinoAdmin\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "MultikinoAdmin\\Services\\UserService.cs",
               "ToolTip": "D:\\Visual Studio\\repos\\Multikino\\MultikinoAdmin\\Services\\UserService.cs",
               "RelativeToolTip": "MultikinoAdmin\\Services\\UserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAYwIcAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-18T20:35:30.86Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "InitializeDatabase.sql",
+              "DocumentIndex": 6,
+              "Title": "InitializeDatabase.sql ",
               "DocumentMoniker": "D:\\Visual Studio\\repos\\Multikino\\MultikinoDataAccess\\InitializeDatabase.sql",
               "RelativeDocumentMoniker": "MultikinoDataAccess\\InitializeDatabase.sql",
               "ToolTip": "D:\\Visual Studio\\repos\\Multikino\\MultikinoDataAccess\\InitializeDatabase.sql",
@@ -235,20 +399,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 8,
               "Title": "LogZdarzen.cs",
               "DocumentMoniker": "D:\\Visual Studio\\repos\\Multikino\\MultikinoDataAccess\\Models\\LogZdarzen.cs",
               "RelativeDocumentMoniker": "MultikinoDataAccess\\Models\\LogZdarzen.cs",
               "ToolTip": "D:\\Visual Studio\\repos\\Multikino\\MultikinoDataAccess\\Models\\LogZdarzen.cs",
               "RelativeToolTip": "MultikinoDataAccess\\Models\\LogZdarzen.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAUAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-22T14:03:22.785Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 24,
               "Title": "HistoriaBiletow.cs",
               "DocumentMoniker": "D:\\Visual Studio\\repos\\Multikino\\MultikinoDataAccess\\Models\\HistoriaBiletow.cs",
               "RelativeDocumentMoniker": "MultikinoDataAccess\\Models\\HistoriaBiletow.cs",
@@ -261,7 +425,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 25,
               "Title": "Bilet.cs",
               "DocumentMoniker": "D:\\Visual Studio\\repos\\Multikino\\MultikinoDataAccess\\Models\\Bilet.cs",
               "RelativeDocumentMoniker": "MultikinoDataAccess\\Models\\Bilet.cs",
@@ -274,7 +438,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 26,
               "Title": "Miejsce.cs",
               "DocumentMoniker": "D:\\Visual Studio\\repos\\Multikino\\MultikinoDataAccess\\Models\\Miejsce.cs",
               "RelativeDocumentMoniker": "MultikinoDataAccess\\Models\\Miejsce.cs",
@@ -287,7 +451,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 27,
               "Title": "Seans.cs",
               "DocumentMoniker": "D:\\Visual Studio\\repos\\Multikino\\MultikinoDataAccess\\Models\\Seans.cs",
               "RelativeDocumentMoniker": "MultikinoDataAccess\\Models\\Seans.cs",
@@ -300,7 +464,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 28,
               "Title": "Sala.cs",
               "DocumentMoniker": "D:\\Visual Studio\\repos\\Multikino\\MultikinoDataAccess\\Models\\Sala.cs",
               "RelativeDocumentMoniker": "MultikinoDataAccess\\Models\\Sala.cs",
@@ -313,7 +477,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 29,
               "Title": "Film.cs",
               "DocumentMoniker": "D:\\Visual Studio\\repos\\Multikino\\MultikinoDataAccess\\Models\\Film.cs",
               "RelativeDocumentMoniker": "MultikinoDataAccess\\Models\\Film.cs",
@@ -326,7 +490,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 7,
               "Title": "Uzytkownik.cs",
               "DocumentMoniker": "D:\\Visual Studio\\repos\\Multikino\\MultikinoDataAccess\\Models\\Uzytkownik.cs",
               "RelativeDocumentMoniker": "MultikinoDataAccess\\Models\\Uzytkownik.cs",
@@ -339,7 +503,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 21,
               "Title": "Class1.cs",
               "DocumentMoniker": "D:\\Visual Studio\\repos\\Multikino\\MultikinoDataAccess\\Class1.cs",
               "RelativeDocumentMoniker": "MultikinoDataAccess\\Class1.cs",
@@ -352,7 +516,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 30,
               "Title": "dbo.Uzytkownik.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/D__VISUAL_STUDIO_REPOS_MULTIKINO_MULTIKINOADMIN_APP_DATA_KINO.MDF/True/SqlTable/dbo.Uzytkownik.sql",
               "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/D__VISUAL_STUDIO_REPOS_MULTIKINO_MULTIKINOADMIN_APP_DATA_KINO.MDF/True/SqlTable/dbo.Uzytkownik.sql",
@@ -361,17 +525,17 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "xhjgswoy..sql ",
+              "DocumentIndex": 31,
+              "Title": "xhjgswoy..sql",
               "DocumentMoniker": "C:\\Users\\usate\\AppData\\Local\\Temp\\xhjgswoy..sql",
-              "ToolTip": "xhjgswoy..sql ",
+              "ToolTip": "C:\\Users\\usate\\AppData\\Local\\Temp\\xhjgswoy..sql",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
               "WhenOpened": "2025-05-18T20:31:46.752Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 32,
               "Title": "MainForm.cs [Design]",
               "DocumentMoniker": "D:\\Visual Studio\\repos\\Multikino\\MultikinoAdmin\\Forms\\MainForm.cs",
               "RelativeDocumentMoniker": "MultikinoAdmin\\Forms\\MainForm.cs",

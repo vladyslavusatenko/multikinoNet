@@ -31,3 +31,5 @@ D:\Visual Studio\repos\Multikino\MultikinoAdmin\bin\Debug\EntityFramework.dll
 D:\Visual Studio\repos\Multikino\MultikinoAdmin\bin\Debug\MultikinoDataAccess.pdb
 D:\Visual Studio\repos\Multikino\MultikinoAdmin\bin\Debug\MultikinoDataAccess.dll.config
 D:\Visual Studio\repos\Multikino\MultikinoAdmin\bin\Debug\EntityFramework.xml
+D:\Visual Studio\repos\Multikino\MultikinoAdmin\bin\Debug\EntityFramework.SqlServer.dll
+D:\Visual Studio\repos\Multikino\MultikinoAdmin\bin\Debug\EntityFramework.SqlServer.xml

@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
+using System.Security.Cryptography;
+using System.Text;
 using MultikinoAdmin.Models;
 using BCrypt.Net;
 
@@ -12,17 +15,14 @@ namespace MultikinoAdmin.Services
 
         public UserService(DatabaseService dbService)
         {
-            _dbService = dbService ?? throw new ArgumentNullException(nameof(dbService));
+            _dbService = dbService;
         }
 
         public User Authenticate(string email, string password)
         {
-            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
-                return null;
-
-            string query = "SELECT * FROM Uzytkownik WHERE Email = @Email";
-            var parameters = new Dictionary<string, object> { { "@Email", email } };
-            DataTable result = _dbService.ExecuteQuery(query, parameters);
+            // Najpierw znajdź użytkownika na podstawie emaila
+            string query = $"SELECT * FROM Uzytkownik WHERE Email = '{email}'";
+            DataTable result = _dbService.ExecuteQuery(query);
 
             if (result.Rows.Count == 0)
                 return null;
@@ -30,10 +30,23 @@ namespace MultikinoAdmin.Services
             DataRow row = result.Rows[0];
             string storedHash = row["Haslo"].ToString();
 
-            bool verified = BCrypt.Net.BCrypt.Verify(password, storedHash);
+            // Sprawdź, czy hasło jest poprawne
+            bool verified = false;
+            try
+            {
+                // Weryfikacja hasła przy użyciu BCrypt
+                verified = BCrypt.Net.BCrypt.Verify(password, storedHash);
+            }
+            catch
+            {
+                // Jeśli wystąpi błąd (np. hash jest w złym formacie), weryfikacja nie powiedzie się
+                verified = false;
+            }
+
             if (!verified)
                 return null;
 
+            // Jeśli hasło jest poprawne, zwróć użytkownika
             return new User
             {
                 UzytkownikId = Convert.ToInt32(row["UzytkownikId"]),
@@ -67,100 +80,88 @@ namespace MultikinoAdmin.Services
 
         public void AddUser(User user)
         {
-            if (user == null || string.IsNullOrWhiteSpace(user.Imie) || string.IsNullOrWhiteSpace(user.Nazwisko) ||
-                string.IsNullOrWhiteSpace(user.Email) || string.IsNullOrWhiteSpace(user.Haslo) || string.IsNullOrWhiteSpace(user.Rola))
-                throw new ArgumentException("Wszystkie pola użytkownika są wymagane.");
+            // Hashuj hasło przy użyciu BCrypt
+            user.Haslo = BCrypt.Net.BCrypt.HashPassword(user.Haslo);
 
-            if (IsEmailTaken(user.Email))
-                throw new InvalidOperationException("Email jest już w użyciu.");
-
-            string hashedPassword = BCrypt.Net.BCrypt.HashPassword(user.Haslo);
-
+            // Parametryzowane zapytanie
             string query = "INSERT INTO Uzytkownik (Imie, Nazwisko, Email, Haslo, Rola) VALUES (@Imie, @Nazwisko, @Email, @Haslo, @Rola)";
+
             var parameters = new Dictionary<string, object>
             {
                 { "@Imie", user.Imie },
                 { "@Nazwisko", user.Nazwisko },
                 { "@Email", user.Email },
-                { "@Haslo", hashedPassword },
+                { "@Haslo", user.Haslo },
                 { "@Rola", user.Rola }
             };
 
             _dbService.ExecuteNonQueryWithParams(query, parameters);
         }
+        //public void AddUser(User user)
+        //{
+        //    // Zapisz oryginalne hasło do debugowania
+        //    string originalPassword = user.Haslo;
+
+        //    try
+        //    {
+        //        // Hashuj hasło
+        //        string hashedPassword = BCrypt.Net.BCrypt.HashPassword(user.Haslo);
+
+        //        // Zapisz hasło po hashowaniu
+        //        user.Haslo = hashedPassword;
+
+        //        // Wyświetl informacje debugowania
+        //        Console.WriteLine($"Oryginalne hasło: {originalPassword}");
+        //        Console.WriteLine($"Zahashowane hasło: {hashedPassword}");
+
+        //        // Reszta kodu...
+        //        // Zapisz użytkownika do bazy danych z parametryzowanym zapytaniem
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        // Loguj szczegóły wyjątku
+        //        Console.WriteLine($"Błąd podczas hashowania/zapisywania: {ex.Message}");
+        //        Console.WriteLine($"Oryginalne hasło: {originalPassword}");
+        //        throw; // Rzuć wyjątek dalej
+        //    }
+        //}
 
         public void UpdateUser(User user)
         {
-            if (user == null || user.UzytkownikId <= 0)
-                throw new ArgumentException("Nieprawidłowy identyfikator użytkownika.");
-
-            string query = "UPDATE Uzytkownik SET Imie = @Imie, Nazwisko = @Nazwisko, Email = @Email, Rola = @Rola WHERE UzytkownikId = @UzytkownikId";
-            var parameters = new Dictionary<string, object>
-            {
-                { "@UzytkownikId", user.UzytkownikId },
-                { "@Imie", user.Imie },
-                { "@Nazwisko", user.Nazwisko },
-                { "@Email", user.Email },
-                { "@Rola", user.Rola }
-            };
-
-            _dbService.ExecuteNonQueryWithParams(query, parameters);
+            string query = $"UPDATE Uzytkownik SET Imie = '{user.Imie}', Nazwisko = '{user.Nazwisko}', " +
+                           $"Email = '{user.Email}', Rola = '{user.Rola}' WHERE UzytkownikId = {user.UzytkownikId}";
+            _dbService.ExecuteNonQuery(query);
         }
 
         public void DeleteUser(int userId)
         {
-            if (userId <= 0)
-                throw new ArgumentException("Nieprawidłowy identyfikator użytkownika.");
-
-            string query = "DELETE FROM Uzytkownik WHERE UzytkownikId = @UzytkownikId";
-            var parameters = new Dictionary<string, object> { { "@UzytkownikId", userId } };
-
-            _dbService.ExecuteNonQueryWithParams(query, parameters);
+            string query = $"DELETE FROM Uzytkownik WHERE UzytkownikId = {userId}";
+            _dbService.ExecuteNonQuery(query);
         }
 
         public void ChangePassword(int userId, string newPassword)
         {
-            if (userId <= 0 || string.IsNullOrWhiteSpace(newPassword))
-                throw new ArgumentException("Nieprawidłowe dane do zmiany hasła.");
-
-            string hashedPassword = BCrypt.Net.BCrypt.HashPassword(newPassword);
-            string query = "UPDATE Uzytkownik SET Haslo = @Haslo WHERE UzytkownikId = @UzytkownikId";
-            var parameters = new Dictionary<string, object>
-            {
-                { "@UzytkownikId", userId },
-                { "@Haslo", hashedPassword }
-            };
-
-            _dbService.ExecuteNonQueryWithParams(query, parameters);
+            string hashedPassword = HashPassword(newPassword);
+            string query = $"UPDATE Uzytkownik SET Haslo = '{hashedPassword}' WHERE UzytkownikId = {userId}";
+            _dbService.ExecuteNonQuery(query);
         }
 
         public string HashPassword(string password)
         {
+            // Używamy BCrypt do hashowania hasła
             return BCrypt.Net.BCrypt.HashPassword(password, BCrypt.Net.BCrypt.GenerateSalt(12));
+        }
+        // UWAGA: Tylko do celów testowych! Usuń przed wdrożeniem produkcyjnym!
+        public string TestHashPassword(string password)
+        {
+            return HashPassword(password);
         }
 
         public void RepairUserPassword(string email, string newPassword)
         {
-            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(newPassword))
-                throw new ArgumentException("Nieprawidłowe dane do naprawy hasła.");
-
-            string hashedPassword = BCrypt.Net.BCrypt.HashPassword(newPassword);
-            string query = "UPDATE Uzytkownik SET Haslo = @Haslo WHERE Email = @Email";
-            var parameters = new Dictionary<string, object>
-            {
-                { "@Email", email },
-                { "@Haslo", hashedPassword }
-            };
-
-            _dbService.ExecuteNonQueryWithParams(query, parameters);
-        }
-
-        private bool IsEmailTaken(string email)
-        {
-            string query = "SELECT COUNT(*) FROM Uzytkownik WHERE Email = @Email";
-            var parameters = new Dictionary<string, object> { { "@Email", email } };
-            DataTable result = _dbService.ExecuteQuery(query, parameters);
-            return Convert.ToInt32(result.Rows[0][0]) > 0;
+            string hashedPassword = HashPassword(newPassword);
+            string query = $"UPDATE Uzytkownik SET Haslo = '{hashedPassword}' WHERE Email = '{email}'";
+            _dbService.ExecuteNonQuery(query);
         }
     }
 }

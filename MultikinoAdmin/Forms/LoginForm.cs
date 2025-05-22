@@ -46,9 +46,64 @@ namespace MultikinoAdmin.Forms
             }
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        //private void btnLogin_Click(object sender, EventArgs e)
+        //{
+
+        //    try
+        //    {
+
+        //        string email = txtEmail.Text.Trim();
+        //        string password = txtPassword.Text;
+
+        //        // Walidacja danych
+        //        if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+        //        {
+        //            lblStatus.Text = "Wprowadź email i hasło!";
+        //            return;
+        //        }
+
+        //        //Próba autentykacji
+        //        var user = _userService.Authenticate(email, password);
+        //        if (user == null)
+        //        {
+        //            lblStatus.Text = "Nieprawidłowy email lub hasło!";
+        //            return;
+        //        }
+
+        //        // Sprawdź rolę
+        //        if (user.Rola != "Administrator")
+        //        {
+        //            lblStatus.Text = "Brak uprawnień administratora!";
+        //            return;
+        //        }
+
+        //        // Zapisz dane użytkownika w sesji
+        //        SessionManager.Login(user);
+
+        //        //Otwórz główne okno aplikacji
+        //        var mainForm = new MainForm();
+        //        mainForm.Show();
+        //        this.Hide();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        lblStatus.Text = "Błąd logowania: " + ex.Message;
+        //    }
+
+        //}
+
+        private void LoginForm_Load_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtEmail_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogin_Click_1(object sender, EventArgs e)
+        {
             try
             {
 
@@ -89,10 +144,14 @@ namespace MultikinoAdmin.Forms
             {
                 lblStatus.Text = "Błąd logowania: " + ex.Message;
             }
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
 
         }
 
-        private void LoginForm_Load_1(object sender, EventArgs e)
+        private void lblStatus_Click(object sender, EventArgs e)
         {
 
         }

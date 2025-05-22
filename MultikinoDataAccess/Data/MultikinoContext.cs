@@ -6,11 +6,15 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 
+using System.Text.RegularExpressions;
+using System.Reflection;
+using System.IO;
+
 namespace MultikinoDataAccess.Data
 {
     public class MultikinoContext : DbContext
     {
-        public MultikinoContext() : base("name=MultikinoDB")
+        public MultikinoContext() : base("name=MultikinoEntities")
         {
             Database.SetInitializer(new CreateDatabaseIfNotExists<MultikinoContext>());
 
@@ -21,7 +25,7 @@ namespace MultikinoDataAccess.Data
             }
             //try
             //{
-                
+
             //}
             //catch (Exception ex)
             //{
@@ -44,16 +48,36 @@ namespace MultikinoDataAccess.Data
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
 
+
+
         public void ExecuteInitializationScript()
         {
             var assembly = Assembly.GetExecutingAssembly();
-            var resourceName = "MultikinoDataAccess.InitializeDatabase.sql"; // Zmień jeśli plik ma inną nazwę lub folder
+            var resourceName = "MultikinoDataAccess.InitializeDatabase.sql"; // Zmień jeśli jest w podfolderze
 
             using (Stream stream = assembly.GetManifestResourceStream(resourceName))
             using (StreamReader reader = new StreamReader(stream))
             {
                 string script = reader.ReadToEnd();
-                this.Database.ExecuteSqlCommand(script);
+
+                // DZIELIMY po "GO" (musi być na osobnej linii)
+                var batches = Regex.Split(script, @"^\s*GO\s*$", RegexOptions.Multiline | RegexOptions.IgnoreCase);
+
+                foreach (var batch in batches)
+                {
+                    string trimmed = batch.Trim();
+                    if (!string.IsNullOrEmpty(trimmed))
+                    {
+                        try
+                        {
+                            this.Database.ExecuteSqlCommand(trimmed);
+                        }
+                        catch (Exception ex)
+                        {
+                            throw new Exception($"Błąd w batchu SQL:\n{trimmed.Substring(0, Math.Min(300, trimmed.Length))}\n\n{ex.Message}", ex);
+                        }
+                    }
+                }
             }
         }
     }

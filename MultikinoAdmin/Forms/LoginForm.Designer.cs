@@ -40,7 +40,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.lblEmail.Location = new System.Drawing.Point(199, 120);
+            this.lblEmail.Location = new System.Drawing.Point(253, 205);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(56, 20);
             this.lblEmail.TabIndex = 0;
@@ -50,7 +50,7 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.lblPassword.Location = new System.Drawing.Point(199, 182);
+            this.lblPassword.Location = new System.Drawing.Point(253, 267);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(88, 20);
             this.lblPassword.TabIndex = 1;
@@ -59,44 +59,48 @@
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.txtEmail.Location = new System.Drawing.Point(301, 117);
+            this.txtEmail.Location = new System.Drawing.Point(355, 202);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(198, 26);
             this.txtEmail.TabIndex = 2;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged_1);
             // 
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.txtPassword.Location = new System.Drawing.Point(301, 176);
+            this.txtPassword.Location = new System.Drawing.Point(355, 261);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(198, 26);
             this.txtPassword.TabIndex = 3;
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.lblStatus.Location = new System.Drawing.Point(12, 421);
+            this.lblStatus.Location = new System.Drawing.Point(12, 532);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(57, 20);
             this.lblStatus.TabIndex = 4;
             this.lblStatus.Text = "Status";
+            this.lblStatus.Click += new System.EventHandler(this.lblStatus_Click);
             // 
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.btnLogin.Location = new System.Drawing.Point(301, 244);
+            this.btnLogin.Location = new System.Drawing.Point(355, 329);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(88, 34);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Log in";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click_1);
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 561);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.txtPassword);

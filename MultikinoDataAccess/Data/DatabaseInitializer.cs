@@ -10,9 +10,11 @@ namespace MultikinoDataAccess.Data
             {
                 if (!context.Database.Exists())
                 {
-                    context.Database.Create(); // tworzy pustą bazę bez migracji
-                    context.ExecuteInitializationScript(); // wykonuje SQL skrypt
+                    context.Database.Create();
+                    context.ExecuteInitializationScript();
                 }
+                
+
             }
         }
     }
