@@ -1,0 +1,59 @@
+﻿@model MultikinoUserWeb.Models.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h2>Register</h2>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">@TempData["Message"]</div>
+}
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(m => m.Imie, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Imie, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Imie, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Nazwisko, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Nazwisko, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Nazwisko, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Haslo, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.PasswordFor(m => m.Haslo, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Haslo, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Register" class="btn btn-default" />
+        </div>
+    </div>
+}
+
+<div>
+    <p>Already have an account? @Html.ActionLink("Login", "Login", "Account")</p>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

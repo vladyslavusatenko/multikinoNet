@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="KinoModelStoreContainer" CdmEntityContainer="MultikinoEntities">
+    <EntitySetMapping Name="Bilet">
+      <EntityTypeMapping TypeName="KinoModel.Bilet">
+        <MappingFragment StoreEntitySet="Bilet">
+          <ScalarProperty Name="BiletId" ColumnName="BiletId" />
+          <ScalarProperty Name="SeansId" ColumnName="SeansId" />
+          <ScalarProperty Name="UzytkownikId" ColumnName="UzytkownikId" />
+          <ScalarProperty Name="Cena" ColumnName="Cena" />
+          <ScalarProperty Name="DataZakupu" ColumnName="DataZakupu" />
+          <ScalarProperty Name="MiejsceId" ColumnName="MiejsceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Film">
+      <EntityTypeMapping TypeName="KinoModel.Film">
+        <MappingFragment StoreEntitySet="Film">
+          <ScalarProperty Name="FilmId" ColumnName="FilmId" />
+          <ScalarProperty Name="Tytul" ColumnName="Tytul" />
+          <ScalarProperty Name="Gatunek" ColumnName="Gatunek" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="CzasTrwania" ColumnName="CzasTrwania" />
+          <ScalarProperty Name="Plakat" ColumnName="Plakat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HistoriaBiletow">
+      <EntityTypeMapping TypeName="KinoModel.HistoriaBiletow">
+        <MappingFragment StoreEntitySet="HistoriaBiletow">
+          <ScalarProperty Name="HistoriaId" ColumnName="HistoriaId" />
+          <ScalarProperty Name="BiletId" ColumnName="BiletId" />
+          <ScalarProperty Name="SeansId" ColumnName="SeansId" />
+          <ScalarProperty Name="UzytkownikId" ColumnName="UzytkownikId" />
+          <ScalarProperty Name="MiejsceNr" ColumnName="MiejsceNr" />
+          <ScalarProperty Name="Cena" ColumnName="Cena" />
+          <ScalarProperty Name="DataZakupu" ColumnName="DataZakupu" />
+          <ScalarProperty Name="DataUsuniecia" ColumnName="DataUsuniecia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LogZdarzen">
+      <EntityTypeMapping TypeName="KinoModel.LogZdarzen">
+        <MappingFragment StoreEntitySet="LogZdarzen">
+          <ScalarProperty Name="LogId" ColumnName="LogId" />
+          <ScalarProperty Name="NazwaTabeli" ColumnName="NazwaTabeli" />
+          <ScalarProperty Name="Operacja" ColumnName="Operacja" />
+          <ScalarProperty Name="Uzytkownik" ColumnName="Uzytkownik" />
+          <ScalarProperty Name="DataOperacji" ColumnName="DataOperacji" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Miejsce">
+      <EntityTypeMapping TypeName="KinoModel.Miejsce">
+        <MappingFragment StoreEntitySet="Miejsce">
+          <ScalarProperty Name="MiejsceId" ColumnName="MiejsceId" />
+          <ScalarProperty Name="SalaId" ColumnName="SalaId" />
+          <ScalarProperty Name="Numer" ColumnName="Numer" />
+          <ScalarProperty Name="Zajete" ColumnName="Zajete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sala">
+      <EntityTypeMapping TypeName="KinoModel.Sala">
+        <MappingFragment StoreEntitySet="Sala">
+          <ScalarProperty Name="SalaId" ColumnName="SalaId" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="LiczbaMiejsc" ColumnName="LiczbaMiejsc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Seans">
+      <EntityTypeMapping TypeName="KinoModel.Seans">
+        <MappingFragment StoreEntitySet="Seans">
+          <ScalarProperty Name="SeansId" ColumnName="SeansId" />
+          <ScalarProperty Name="FilmId" ColumnName="FilmId" />
+          <ScalarProperty Name="SalaId" ColumnName="SalaId" />
+          <ScalarProperty Name="DataSeansu" ColumnName="DataSeansu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Uzytkownik">
+      <EntityTypeMapping TypeName="KinoModel.Uzytkownik">
+        <MappingFragment StoreEntitySet="Uzytkownik">
+          <ScalarProperty Name="UzytkownikId" ColumnName="UzytkownikId" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Haslo" ColumnName="Haslo" />
+          <ScalarProperty Name="Rola" ColumnName="Rola" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="v_AktywneSeanse">
+      <EntityTypeMapping TypeName="KinoModel.v_AktywneSeanse">
+        <MappingFragment StoreEntitySet="v_AktywneSeanse">
+          <ScalarProperty Name="SeansId" ColumnName="SeansId" />
+          <ScalarProperty Name="Tytul" ColumnName="Tytul" />
+          <ScalarProperty Name="DataSeansu" ColumnName="DataSeansu" />
+          <ScalarProperty Name="Sala" ColumnName="Sala" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="v_ObecneFilmy">
+      <EntityTypeMapping TypeName="KinoModel.v_ObecneFilmy">
+        <MappingFragment StoreEntitySet="v_ObecneFilmy">
+          <ScalarProperty Name="Tytul" ColumnName="Tytul" />
+          <ScalarProperty Name="DataSeansu" ColumnName="DataSeansu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="v_SeanseZPrzychodami">
+      <EntityTypeMapping TypeName="KinoModel.v_SeanseZPrzychodami">
+        <MappingFragment StoreEntitySet="v_SeanseZPrzychodami">
+          <ScalarProperty Name="Tytul" ColumnName="Tytul" />
+          <ScalarProperty Name="DataSeansu" ColumnName="DataSeansu" />
+          <ScalarProperty Name="Przychody" ColumnName="Przychody" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="v_SprzedazNaFilm">
+      <EntityTypeMapping TypeName="KinoModel.v_SprzedazNaFilm">
+        <MappingFragment StoreEntitySet="v_SprzedazNaFilm">
+          <ScalarProperty Name="Tytul" ColumnName="Tytul" />
+          <ScalarProperty Name="Przychody" ColumnName="Przychody" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="v_StatystykaUzytkownikow">
+      <EntityTypeMapping TypeName="KinoModel.v_StatystykaUzytkownikow">
+        <MappingFragment StoreEntitySet="v_StatystykaUzytkownikow">
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="LiczbaZakupionychBiletow" ColumnName="LiczbaZakupionychBiletow" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="v_ZapelnienieSal">
+      <EntityTypeMapping TypeName="KinoModel.v_ZapelnienieSal">
+        <MappingFragment StoreEntitySet="v_ZapelnienieSal">
+          <ScalarProperty Name="Sala" ColumnName="Sala" />
+          <ScalarProperty Name="LiczbaMiejsc" ColumnName="LiczbaMiejsc" />
+          <ScalarProperty Name="MiejscaZajete" ColumnName="MiejscaZajete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_DodajFilm" FunctionName="KinoModel.Store.sp_DodajFilm" />
+    <FunctionImportMapping FunctionImportName="sp_DodajSeans" FunctionName="KinoModel.Store.sp_DodajSeans" />
+    <FunctionImportMapping FunctionImportName="sp_GenerujRaportDzienny" FunctionName="KinoModel.Store.sp_GenerujRaportDzienny">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="KinoModel.sp_GenerujRaportDzienny_Result">
+          <ScalarProperty Name="Tytul" ColumnName="Tytul" />
+          <ScalarProperty Name="DataSeansu" ColumnName="DataSeansu" />
+          <ScalarProperty Name="Przychody" ColumnName="Przychody" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GenerujRaportMiesieczny" FunctionName="KinoModel.Store.sp_GenerujRaportMiesieczny">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="KinoModel.sp_GenerujRaportMiesieczny_Result">
+          <ScalarProperty Name="Tytul" ColumnName="Tytul" />
+          <ScalarProperty Name="DataSeansu" ColumnName="DataSeansu" />
+          <ScalarProperty Name="Przychody" ColumnName="Przychody" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_KupBilet" FunctionName="KinoModel.Store.sp_KupBilet" />
+    <FunctionImportMapping FunctionImportName="sp_UsunSeans" FunctionName="KinoModel.Store.sp_UsunSeans" />
+    <FunctionImportMapping FunctionImportName="sp_UtworzUzytkownika" FunctionName="KinoModel.Store.sp_UtworzUzytkownika" />
+    <FunctionImportMapping FunctionImportName="sp_ZmienDaneFilmu" FunctionName="KinoModel.Store.sp_ZmienDaneFilmu" />
+    <FunctionImportMapping FunctionImportName="sp_ZmienRoleUzytkownika" FunctionName="KinoModel.Store.sp_ZmienRoleUzytkownika" />
+    <FunctionImportMapping FunctionImportName="sp_ZwrocBilet" FunctionName="KinoModel.Store.sp_ZwrocBilet" />
+  </EntityContainerMapping>
+</Mapping>

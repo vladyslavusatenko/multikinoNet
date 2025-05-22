@@ -1,0 +1,878 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="KinoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Bilet">
+          <Key>
+            <PropertyRef Name="BiletId" />
+          </Key>
+          <Property Name="BiletId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SeansId" Type="int" />
+          <Property Name="UzytkownikId" Type="int" />
+          <Property Name="Cena" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="DataZakupu" Type="datetime" Nullable="false" />
+          <Property Name="MiejsceId" Type="int" />
+        </EntityType>
+        <EntityType Name="Film">
+          <Key>
+            <PropertyRef Name="FilmId" />
+          </Key>
+          <Property Name="FilmId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tytul" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Gatunek" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Opis" Type="nvarchar" MaxLength="1000" />
+          <Property Name="CzasTrwania" Type="int" Nullable="false" />
+          <Property Name="Plakat" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="HistoriaBiletow">
+          <Key>
+            <PropertyRef Name="HistoriaId" />
+          </Key>
+          <Property Name="HistoriaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BiletId" Type="int" />
+          <Property Name="SeansId" Type="int" />
+          <Property Name="UzytkownikId" Type="int" />
+          <Property Name="MiejsceNr" Type="int" />
+          <Property Name="Cena" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="DataZakupu" Type="datetime" />
+          <Property Name="DataUsuniecia" Type="datetime" />
+        </EntityType>
+        <EntityType Name="LogZdarzen">
+          <Key>
+            <PropertyRef Name="LogId" />
+          </Key>
+          <Property Name="LogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NazwaTabeli" Type="nvarchar" MaxLength="50" />
+          <Property Name="Operacja" Type="nvarchar" MaxLength="10" />
+          <Property Name="Uzytkownik" Type="nvarchar" MaxLength="100" />
+          <Property Name="DataOperacji" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Miejsce">
+          <Key>
+            <PropertyRef Name="MiejsceId" />
+          </Key>
+          <Property Name="MiejsceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SalaId" Type="int" />
+          <Property Name="Numer" Type="int" Nullable="false" />
+          <Property Name="Zajete" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sala">
+          <Key>
+            <PropertyRef Name="SalaId" />
+          </Key>
+          <Property Name="SalaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LiczbaMiejsc" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Seans">
+          <Key>
+            <PropertyRef Name="SeansId" />
+          </Key>
+          <Property Name="SeansId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FilmId" Type="int" />
+          <Property Name="SalaId" Type="int" />
+          <Property Name="DataSeansu" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Uzytkownik">
+          <Key>
+            <PropertyRef Name="UzytkownikId" />
+          </Key>
+          <Property Name="UzytkownikId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Imie" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nazwisko" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Haslo" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Rola" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'D:\VISUAL STUDIO\REPOS\MULTIKINO\MULTIKINOADMIN\APP_DATA\KINO.MDF.dbo.v_AktywneSeanse' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_AktywneSeanse">
+          <Key>
+            <PropertyRef Name="SeansId" />
+            <PropertyRef Name="Tytul" />
+            <PropertyRef Name="DataSeansu" />
+            <PropertyRef Name="Sala" />
+          </Key>
+          <Property Name="SeansId" Type="int" Nullable="false" />
+          <Property Name="Tytul" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="DataSeansu" Type="datetime" Nullable="false" />
+          <Property Name="Sala" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'D:\VISUAL STUDIO\REPOS\MULTIKINO\MULTIKINOADMIN\APP_DATA\KINO.MDF.dbo.v_ObecneFilmy' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_ObecneFilmy">
+          <Key>
+            <PropertyRef Name="Tytul" />
+            <PropertyRef Name="DataSeansu" />
+          </Key>
+          <Property Name="Tytul" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="DataSeansu" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'D:\VISUAL STUDIO\REPOS\MULTIKINO\MULTIKINOADMIN\APP_DATA\KINO.MDF.dbo.v_SeanseDzienTygodnia' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="v_SeanseDzienTygodnia">
+          <Property Name="DzienTygodnia" Type="nvarchar" MaxLength="30" />
+          <Property Name="LiczbaSeansow" Type="int" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'D:\VISUAL STUDIO\REPOS\MULTIKINO\MULTIKINOADMIN\APP_DATA\KINO.MDF.dbo.v_SeanseZPrzychodami' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_SeanseZPrzychodami">
+          <Key>
+            <PropertyRef Name="Tytul" />
+            <PropertyRef Name="DataSeansu" />
+          </Key>
+          <Property Name="Tytul" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="DataSeansu" Type="datetime" Nullable="false" />
+          <Property Name="Przychody" Type="decimal" Precision="38" Scale="2" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'D:\VISUAL STUDIO\REPOS\MULTIKINO\MULTIKINOADMIN\APP_DATA\KINO.MDF.dbo.v_SprzedazNaFilm' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_SprzedazNaFilm">
+          <Key>
+            <PropertyRef Name="Tytul" />
+          </Key>
+          <Property Name="Tytul" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Przychody" Type="decimal" Precision="38" Scale="2" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'D:\VISUAL STUDIO\REPOS\MULTIKINO\MULTIKINOADMIN\APP_DATA\KINO.MDF.dbo.v_StatystykaUzytkownikow' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_StatystykaUzytkownikow">
+          <Key>
+            <PropertyRef Name="Imie" />
+            <PropertyRef Name="Nazwisko" />
+          </Key>
+          <Property Name="Imie" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nazwisko" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LiczbaZakupionychBiletow" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'D:\VISUAL STUDIO\REPOS\MULTIKINO\MULTIKINOADMIN\APP_DATA\KINO.MDF.dbo.v_ZapelnienieSal' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_ZapelnienieSal">
+          <Key>
+            <PropertyRef Name="Sala" />
+          </Key>
+          <Property Name="Sala" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LiczbaMiejsc" Type="int" />
+          <Property Name="MiejscaZajete" Type="int" />
+        </EntityType>
+        <Association Name="FK_Bilet_Miejsce">
+          <End Role="Miejsce" Type="Self.Miejsce" Multiplicity="0..1" />
+          <End Role="Bilet" Type="Self.Bilet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Miejsce">
+              <PropertyRef Name="MiejsceId" />
+            </Principal>
+            <Dependent Role="Bilet">
+              <PropertyRef Name="MiejsceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bilet_Seans">
+          <End Role="Seans" Type="Self.Seans" Multiplicity="0..1" />
+          <End Role="Bilet" Type="Self.Bilet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Seans">
+              <PropertyRef Name="SeansId" />
+            </Principal>
+            <Dependent Role="Bilet">
+              <PropertyRef Name="SeansId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bilet_Uzytkownik">
+          <End Role="Uzytkownik" Type="Self.Uzytkownik" Multiplicity="0..1" />
+          <End Role="Bilet" Type="Self.Bilet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uzytkownik">
+              <PropertyRef Name="UzytkownikId" />
+            </Principal>
+            <Dependent Role="Bilet">
+              <PropertyRef Name="UzytkownikId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Miejsce_Sala">
+          <End Role="Sala" Type="Self.Sala" Multiplicity="0..1" />
+          <End Role="Miejsce" Type="Self.Miejsce" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sala">
+              <PropertyRef Name="SalaId" />
+            </Principal>
+            <Dependent Role="Miejsce">
+              <PropertyRef Name="SalaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seans_Film">
+          <End Role="Film" Type="Self.Film" Multiplicity="0..1" />
+          <End Role="Seans" Type="Self.Seans" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Film">
+              <PropertyRef Name="FilmId" />
+            </Principal>
+            <Dependent Role="Seans">
+              <PropertyRef Name="FilmId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seans_Sala">
+          <End Role="Sala" Type="Self.Sala" Multiplicity="0..1" />
+          <End Role="Seans" Type="Self.Seans" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sala">
+              <PropertyRef Name="SalaId" />
+            </Principal>
+            <Dependent Role="Seans">
+              <PropertyRef Name="SalaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="sp_DodajFilm" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Tytul" Type="nvarchar" Mode="In" />
+          <Parameter Name="Gatunek" Type="nvarchar" Mode="In" />
+          <Parameter Name="Opis" Type="nvarchar" Mode="In" />
+          <Parameter Name="CzasTrwania" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_DodajSeans" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FilmId" Type="int" Mode="In" />
+          <Parameter Name="SalaId" Type="int" Mode="In" />
+          <Parameter Name="DataSeansu" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="sp_GenerujRaportDzienny" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_GenerujRaportMiesieczny" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_KupBilet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SeansId" Type="int" Mode="In" />
+          <Parameter Name="UzytkownikId" Type="int" Mode="In" />
+          <Parameter Name="Cena" Type="decimal" Mode="In" />
+          <Parameter Name="DataZakupu" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="sp_UsunSeans" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SeansId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_UtworzUzytkownika" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Imie" Type="nvarchar" Mode="In" />
+          <Parameter Name="Nazwisko" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="Haslo" Type="nvarchar" Mode="In" />
+          <Parameter Name="Rola" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_ZmienDaneFilmu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FilmId" Type="int" Mode="In" />
+          <Parameter Name="NowyTytul" Type="nvarchar" Mode="In" />
+          <Parameter Name="NowyGatunek" Type="nvarchar" Mode="In" />
+          <Parameter Name="NowyOpis" Type="nvarchar" Mode="In" />
+          <Parameter Name="NowyCzasTrwania" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_ZmienRoleUzytkownika" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UzytkownikId" Type="int" Mode="In" />
+          <Parameter Name="NowaRola" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_ZwrocBilet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BiletId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ufn_CzyFilmJestGranyObecnie" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="bit">
+          <Parameter Name="FilmId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ufn_CzyMiejsceZajete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="bit">
+          <Parameter Name="MiejsceId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ufn_LiczbaBiletowUzytkownika" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+          <Parameter Name="UzytkownikId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ufn_PodsumowanieFilmu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="nvarchar">
+          <Parameter Name="FilmId" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="KinoModelStoreContainer">
+          <EntitySet Name="Bilet" EntityType="Self.Bilet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Film" EntityType="Self.Film" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HistoriaBiletow" EntityType="Self.HistoriaBiletow" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LogZdarzen" EntityType="Self.LogZdarzen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Miejsce" EntityType="Self.Miejsce" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sala" EntityType="Self.Sala" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Seans" EntityType="Self.Seans" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Uzytkownik" EntityType="Self.Uzytkownik" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="v_AktywneSeanse" EntityType="Self.v_AktywneSeanse" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [v_AktywneSeanse].[SeansId] AS [SeansId], 
+    [v_AktywneSeanse].[Tytul] AS [Tytul], 
+    [v_AktywneSeanse].[DataSeansu] AS [DataSeansu], 
+    [v_AktywneSeanse].[Sala] AS [Sala]
+    FROM [dbo].[v_AktywneSeanse] AS [v_AktywneSeanse]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_ObecneFilmy" EntityType="Self.v_ObecneFilmy" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [v_ObecneFilmy].[Tytul] AS [Tytul], 
+    [v_ObecneFilmy].[DataSeansu] AS [DataSeansu]
+    FROM [dbo].[v_ObecneFilmy] AS [v_ObecneFilmy]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_SeanseZPrzychodami" EntityType="Self.v_SeanseZPrzychodami" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [v_SeanseZPrzychodami].[Tytul] AS [Tytul], 
+    [v_SeanseZPrzychodami].[DataSeansu] AS [DataSeansu], 
+    [v_SeanseZPrzychodami].[Przychody] AS [Przychody]
+    FROM [dbo].[v_SeanseZPrzychodami] AS [v_SeanseZPrzychodami]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_SprzedazNaFilm" EntityType="Self.v_SprzedazNaFilm" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [v_SprzedazNaFilm].[Tytul] AS [Tytul], 
+    [v_SprzedazNaFilm].[Przychody] AS [Przychody]
+    FROM [dbo].[v_SprzedazNaFilm] AS [v_SprzedazNaFilm]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_StatystykaUzytkownikow" EntityType="Self.v_StatystykaUzytkownikow" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [v_StatystykaUzytkownikow].[Imie] AS [Imie], 
+    [v_StatystykaUzytkownikow].[Nazwisko] AS [Nazwisko], 
+    [v_StatystykaUzytkownikow].[LiczbaZakupionychBiletow] AS [LiczbaZakupionychBiletow]
+    FROM [dbo].[v_StatystykaUzytkownikow] AS [v_StatystykaUzytkownikow]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_ZapelnienieSal" EntityType="Self.v_ZapelnienieSal" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [v_ZapelnienieSal].[Sala] AS [Sala], 
+    [v_ZapelnienieSal].[LiczbaMiejsc] AS [LiczbaMiejsc], 
+    [v_ZapelnienieSal].[MiejscaZajete] AS [MiejscaZajete]
+    FROM [dbo].[v_ZapelnienieSal] AS [v_ZapelnienieSal]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Bilet_Miejsce" Association="Self.FK_Bilet_Miejsce">
+            <End Role="Miejsce" EntitySet="Miejsce" />
+            <End Role="Bilet" EntitySet="Bilet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bilet_Seans" Association="Self.FK_Bilet_Seans">
+            <End Role="Seans" EntitySet="Seans" />
+            <End Role="Bilet" EntitySet="Bilet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bilet_Uzytkownik" Association="Self.FK_Bilet_Uzytkownik">
+            <End Role="Uzytkownik" EntitySet="Uzytkownik" />
+            <End Role="Bilet" EntitySet="Bilet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Miejsce_Sala" Association="Self.FK_Miejsce_Sala">
+            <End Role="Sala" EntitySet="Sala" />
+            <End Role="Miejsce" EntitySet="Miejsce" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seans_Film" Association="Self.FK_Seans_Film">
+            <End Role="Film" EntitySet="Film" />
+            <End Role="Seans" EntitySet="Seans" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seans_Sala" Association="Self.FK_Seans_Sala">
+            <End Role="Sala" EntitySet="Sala" />
+            <End Role="Seans" EntitySet="Seans" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KinoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Bilet">
+          <Key>
+            <PropertyRef Name="BiletId" />
+          </Key>
+          <Property Name="BiletId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SeansId" Type="Int32" />
+          <Property Name="UzytkownikId" Type="Int32" />
+          <Property Name="Cena" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="DataZakupu" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MiejsceId" Type="Int32" />
+          <NavigationProperty Name="Miejsce" Relationship="Self.FK_Bilet_Miejsce" FromRole="Bilet" ToRole="Miejsce" />
+          <NavigationProperty Name="Seans" Relationship="Self.FK_Bilet_Seans" FromRole="Bilet" ToRole="Seans" />
+          <NavigationProperty Name="Uzytkownik" Relationship="Self.FK_Bilet_Uzytkownik" FromRole="Bilet" ToRole="Uzytkownik" />
+        </EntityType>
+        <EntityType Name="Film">
+          <Key>
+            <PropertyRef Name="FilmId" />
+          </Key>
+          <Property Name="FilmId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tytul" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Gatunek" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Opis" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="CzasTrwania" Type="Int32" Nullable="false" />
+          <Property Name="Plakat" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Seans" Relationship="Self.FK_Seans_Film" FromRole="Film" ToRole="Seans" />
+        </EntityType>
+        <EntityType Name="HistoriaBiletow">
+          <Key>
+            <PropertyRef Name="HistoriaId" />
+          </Key>
+          <Property Name="HistoriaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BiletId" Type="Int32" />
+          <Property Name="SeansId" Type="Int32" />
+          <Property Name="UzytkownikId" Type="Int32" />
+          <Property Name="MiejsceNr" Type="Int32" />
+          <Property Name="Cena" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="DataZakupu" Type="DateTime" Precision="3" />
+          <Property Name="DataUsuniecia" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="LogZdarzen">
+          <Key>
+            <PropertyRef Name="LogId" />
+          </Key>
+          <Property Name="LogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NazwaTabeli" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Operacja" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Uzytkownik" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DataOperacji" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Miejsce">
+          <Key>
+            <PropertyRef Name="MiejsceId" />
+          </Key>
+          <Property Name="MiejsceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SalaId" Type="Int32" />
+          <Property Name="Numer" Type="Int32" Nullable="false" />
+          <Property Name="Zajete" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Bilet" Relationship="Self.FK_Bilet_Miejsce" FromRole="Miejsce" ToRole="Bilet" />
+          <NavigationProperty Name="Sala" Relationship="Self.FK_Miejsce_Sala" FromRole="Miejsce" ToRole="Sala" />
+        </EntityType>
+        <EntityType Name="Sala">
+          <Key>
+            <PropertyRef Name="SalaId" />
+          </Key>
+          <Property Name="SalaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LiczbaMiejsc" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Miejsce" Relationship="Self.FK_Miejsce_Sala" FromRole="Sala" ToRole="Miejsce" />
+          <NavigationProperty Name="Seans" Relationship="Self.FK_Seans_Sala" FromRole="Sala" ToRole="Seans" />
+        </EntityType>
+        <EntityType Name="Seans">
+          <Key>
+            <PropertyRef Name="SeansId" />
+          </Key>
+          <Property Name="SeansId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FilmId" Type="Int32" />
+          <Property Name="SalaId" Type="Int32" />
+          <Property Name="DataSeansu" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Bilet" Relationship="Self.FK_Bilet_Seans" FromRole="Seans" ToRole="Bilet" />
+          <NavigationProperty Name="Film" Relationship="Self.FK_Seans_Film" FromRole="Seans" ToRole="Film" />
+          <NavigationProperty Name="Sala" Relationship="Self.FK_Seans_Sala" FromRole="Seans" ToRole="Sala" />
+        </EntityType>
+        <EntityType Name="Uzytkownik">
+          <Key>
+            <PropertyRef Name="UzytkownikId" />
+          </Key>
+          <Property Name="UzytkownikId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Imie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nazwisko" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Haslo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Rola" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Bilet" Relationship="Self.FK_Bilet_Uzytkownik" FromRole="Uzytkownik" ToRole="Bilet" />
+        </EntityType>
+        <EntityType Name="v_AktywneSeanse">
+          <Key>
+            <PropertyRef Name="SeansId" />
+            <PropertyRef Name="Tytul" />
+            <PropertyRef Name="DataSeansu" />
+            <PropertyRef Name="Sala" />
+          </Key>
+          <Property Name="SeansId" Type="Int32" Nullable="false" />
+          <Property Name="Tytul" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DataSeansu" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Sala" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="v_ObecneFilmy">
+          <Key>
+            <PropertyRef Name="Tytul" />
+            <PropertyRef Name="DataSeansu" />
+          </Key>
+          <Property Name="Tytul" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DataSeansu" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="v_SeanseZPrzychodami">
+          <Key>
+            <PropertyRef Name="Tytul" />
+            <PropertyRef Name="DataSeansu" />
+          </Key>
+          <Property Name="Tytul" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DataSeansu" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Przychody" Type="Decimal" Precision="38" Scale="2" />
+        </EntityType>
+        <EntityType Name="v_SprzedazNaFilm">
+          <Key>
+            <PropertyRef Name="Tytul" />
+          </Key>
+          <Property Name="Tytul" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Przychody" Type="Decimal" Precision="38" Scale="2" />
+        </EntityType>
+        <EntityType Name="v_StatystykaUzytkownikow">
+          <Key>
+            <PropertyRef Name="Imie" />
+            <PropertyRef Name="Nazwisko" />
+          </Key>
+          <Property Name="Imie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nazwisko" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LiczbaZakupionychBiletow" Type="Int32" />
+        </EntityType>
+        <EntityType Name="v_ZapelnienieSal">
+          <Key>
+            <PropertyRef Name="Sala" />
+          </Key>
+          <Property Name="Sala" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LiczbaMiejsc" Type="Int32" />
+          <Property Name="MiejscaZajete" Type="Int32" />
+        </EntityType>
+        <Association Name="FK_Bilet_Miejsce">
+          <End Role="Miejsce" Type="Self.Miejsce" Multiplicity="0..1" />
+          <End Role="Bilet" Type="Self.Bilet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Miejsce">
+              <PropertyRef Name="MiejsceId" />
+            </Principal>
+            <Dependent Role="Bilet">
+              <PropertyRef Name="MiejsceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bilet_Seans">
+          <End Role="Seans" Type="Self.Seans" Multiplicity="0..1" />
+          <End Role="Bilet" Type="Self.Bilet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Seans">
+              <PropertyRef Name="SeansId" />
+            </Principal>
+            <Dependent Role="Bilet">
+              <PropertyRef Name="SeansId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bilet_Uzytkownik">
+          <End Role="Uzytkownik" Type="Self.Uzytkownik" Multiplicity="0..1" />
+          <End Role="Bilet" Type="Self.Bilet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uzytkownik">
+              <PropertyRef Name="UzytkownikId" />
+            </Principal>
+            <Dependent Role="Bilet">
+              <PropertyRef Name="UzytkownikId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seans_Film">
+          <End Role="Film" Type="Self.Film" Multiplicity="0..1" />
+          <End Role="Seans" Type="Self.Seans" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Film">
+              <PropertyRef Name="FilmId" />
+            </Principal>
+            <Dependent Role="Seans">
+              <PropertyRef Name="FilmId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Miejsce_Sala">
+          <End Role="Sala" Type="Self.Sala" Multiplicity="0..1" />
+          <End Role="Miejsce" Type="Self.Miejsce" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sala">
+              <PropertyRef Name="SalaId" />
+            </Principal>
+            <Dependent Role="Miejsce">
+              <PropertyRef Name="SalaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seans_Sala">
+          <End Role="Sala" Type="Self.Sala" Multiplicity="0..1" />
+          <End Role="Seans" Type="Self.Seans" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sala">
+              <PropertyRef Name="SalaId" />
+            </Principal>
+            <Dependent Role="Seans">
+              <PropertyRef Name="SalaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MultikinoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Bilet" EntityType="Self.Bilet" />
+          <EntitySet Name="Film" EntityType="Self.Film" />
+          <EntitySet Name="HistoriaBiletow" EntityType="Self.HistoriaBiletow" />
+          <EntitySet Name="LogZdarzen" EntityType="Self.LogZdarzen" />
+          <EntitySet Name="Miejsce" EntityType="Self.Miejsce" />
+          <EntitySet Name="Sala" EntityType="Self.Sala" />
+          <EntitySet Name="Seans" EntityType="Self.Seans" />
+          <EntitySet Name="Uzytkownik" EntityType="Self.Uzytkownik" />
+          <EntitySet Name="v_AktywneSeanse" EntityType="Self.v_AktywneSeanse" />
+          <EntitySet Name="v_ObecneFilmy" EntityType="Self.v_ObecneFilmy" />
+          <EntitySet Name="v_SeanseZPrzychodami" EntityType="Self.v_SeanseZPrzychodami" />
+          <EntitySet Name="v_SprzedazNaFilm" EntityType="Self.v_SprzedazNaFilm" />
+          <EntitySet Name="v_StatystykaUzytkownikow" EntityType="Self.v_StatystykaUzytkownikow" />
+          <EntitySet Name="v_ZapelnienieSal" EntityType="Self.v_ZapelnienieSal" />
+          <AssociationSet Name="FK_Bilet_Miejsce" Association="Self.FK_Bilet_Miejsce">
+            <End Role="Miejsce" EntitySet="Miejsce" />
+            <End Role="Bilet" EntitySet="Bilet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bilet_Seans" Association="Self.FK_Bilet_Seans">
+            <End Role="Seans" EntitySet="Seans" />
+            <End Role="Bilet" EntitySet="Bilet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bilet_Uzytkownik" Association="Self.FK_Bilet_Uzytkownik">
+            <End Role="Uzytkownik" EntitySet="Uzytkownik" />
+            <End Role="Bilet" EntitySet="Bilet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seans_Film" Association="Self.FK_Seans_Film">
+            <End Role="Film" EntitySet="Film" />
+            <End Role="Seans" EntitySet="Seans" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Miejsce_Sala" Association="Self.FK_Miejsce_Sala">
+            <End Role="Sala" EntitySet="Sala" />
+            <End Role="Miejsce" EntitySet="Miejsce" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seans_Sala" Association="Self.FK_Seans_Sala">
+            <End Role="Sala" EntitySet="Sala" />
+            <End Role="Seans" EntitySet="Seans" />
+          </AssociationSet>
+          <FunctionImport Name="sp_DodajFilm">
+            <Parameter Name="Tytul" Mode="In" Type="String" />
+            <Parameter Name="Gatunek" Mode="In" Type="String" />
+            <Parameter Name="Opis" Mode="In" Type="String" />
+            <Parameter Name="CzasTrwania" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_DodajSeans">
+            <Parameter Name="FilmId" Mode="In" Type="Int32" />
+            <Parameter Name="SalaId" Mode="In" Type="Int32" />
+            <Parameter Name="DataSeansu" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="sp_GenerujRaportDzienny" ReturnType="Collection(KinoModel.sp_GenerujRaportDzienny_Result)" />
+          <FunctionImport Name="sp_GenerujRaportMiesieczny" ReturnType="Collection(KinoModel.sp_GenerujRaportMiesieczny_Result)" />
+          <FunctionImport Name="sp_KupBilet">
+            <Parameter Name="SeansId" Mode="In" Type="Int32" />
+            <Parameter Name="UzytkownikId" Mode="In" Type="Int32" />
+            <Parameter Name="Cena" Mode="In" Type="Decimal" />
+            <Parameter Name="DataZakupu" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="sp_UsunSeans">
+            <Parameter Name="SeansId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_UtworzUzytkownika">
+            <Parameter Name="Imie" Mode="In" Type="String" />
+            <Parameter Name="Nazwisko" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="Haslo" Mode="In" Type="String" />
+            <Parameter Name="Rola" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_ZmienDaneFilmu">
+            <Parameter Name="FilmId" Mode="In" Type="Int32" />
+            <Parameter Name="NowyTytul" Mode="In" Type="String" />
+            <Parameter Name="NowyGatunek" Mode="In" Type="String" />
+            <Parameter Name="NowyOpis" Mode="In" Type="String" />
+            <Parameter Name="NowyCzasTrwania" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_ZmienRoleUzytkownika">
+            <Parameter Name="UzytkownikId" Mode="In" Type="Int32" />
+            <Parameter Name="NowaRola" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_ZwrocBilet">
+            <Parameter Name="BiletId" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="sp_GenerujRaportDzienny_Result">
+          <Property Type="String" Name="Tytul" Nullable="false" MaxLength="255" />
+          <Property Type="DateTime" Name="DataSeansu" Nullable="false" Precision="23" />
+          <Property Type="Decimal" Name="Przychody" Nullable="true" Precision="38" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="sp_GenerujRaportMiesieczny_Result">
+          <Property Type="String" Name="Tytul" Nullable="false" MaxLength="255" />
+          <Property Type="DateTime" Name="DataSeansu" Nullable="false" Precision="23" />
+          <Property Type="Decimal" Name="Przychody" Nullable="true" Precision="38" Scale="2" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="KinoModelStoreContainer" CdmEntityContainer="MultikinoEntities">
+          <EntitySetMapping Name="Bilet">
+            <EntityTypeMapping TypeName="KinoModel.Bilet">
+              <MappingFragment StoreEntitySet="Bilet">
+                <ScalarProperty Name="BiletId" ColumnName="BiletId" />
+                <ScalarProperty Name="SeansId" ColumnName="SeansId" />
+                <ScalarProperty Name="UzytkownikId" ColumnName="UzytkownikId" />
+                <ScalarProperty Name="Cena" ColumnName="Cena" />
+                <ScalarProperty Name="DataZakupu" ColumnName="DataZakupu" />
+                <ScalarProperty Name="MiejsceId" ColumnName="MiejsceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Film">
+            <EntityTypeMapping TypeName="KinoModel.Film">
+              <MappingFragment StoreEntitySet="Film">
+                <ScalarProperty Name="FilmId" ColumnName="FilmId" />
+                <ScalarProperty Name="Tytul" ColumnName="Tytul" />
+                <ScalarProperty Name="Gatunek" ColumnName="Gatunek" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="CzasTrwania" ColumnName="CzasTrwania" />
+                <ScalarProperty Name="Plakat" ColumnName="Plakat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HistoriaBiletow">
+            <EntityTypeMapping TypeName="KinoModel.HistoriaBiletow">
+              <MappingFragment StoreEntitySet="HistoriaBiletow">
+                <ScalarProperty Name="HistoriaId" ColumnName="HistoriaId" />
+                <ScalarProperty Name="BiletId" ColumnName="BiletId" />
+                <ScalarProperty Name="SeansId" ColumnName="SeansId" />
+                <ScalarProperty Name="UzytkownikId" ColumnName="UzytkownikId" />
+                <ScalarProperty Name="MiejsceNr" ColumnName="MiejsceNr" />
+                <ScalarProperty Name="Cena" ColumnName="Cena" />
+                <ScalarProperty Name="DataZakupu" ColumnName="DataZakupu" />
+                <ScalarProperty Name="DataUsuniecia" ColumnName="DataUsuniecia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LogZdarzen">
+            <EntityTypeMapping TypeName="KinoModel.LogZdarzen">
+              <MappingFragment StoreEntitySet="LogZdarzen">
+                <ScalarProperty Name="LogId" ColumnName="LogId" />
+                <ScalarProperty Name="NazwaTabeli" ColumnName="NazwaTabeli" />
+                <ScalarProperty Name="Operacja" ColumnName="Operacja" />
+                <ScalarProperty Name="Uzytkownik" ColumnName="Uzytkownik" />
+                <ScalarProperty Name="DataOperacji" ColumnName="DataOperacji" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Miejsce">
+            <EntityTypeMapping TypeName="KinoModel.Miejsce">
+              <MappingFragment StoreEntitySet="Miejsce">
+                <ScalarProperty Name="MiejsceId" ColumnName="MiejsceId" />
+                <ScalarProperty Name="SalaId" ColumnName="SalaId" />
+                <ScalarProperty Name="Numer" ColumnName="Numer" />
+                <ScalarProperty Name="Zajete" ColumnName="Zajete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sala">
+            <EntityTypeMapping TypeName="KinoModel.Sala">
+              <MappingFragment StoreEntitySet="Sala">
+                <ScalarProperty Name="SalaId" ColumnName="SalaId" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="LiczbaMiejsc" ColumnName="LiczbaMiejsc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Seans">
+            <EntityTypeMapping TypeName="KinoModel.Seans">
+              <MappingFragment StoreEntitySet="Seans">
+                <ScalarProperty Name="SeansId" ColumnName="SeansId" />
+                <ScalarProperty Name="FilmId" ColumnName="FilmId" />
+                <ScalarProperty Name="SalaId" ColumnName="SalaId" />
+                <ScalarProperty Name="DataSeansu" ColumnName="DataSeansu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Uzytkownik">
+            <EntityTypeMapping TypeName="KinoModel.Uzytkownik">
+              <MappingFragment StoreEntitySet="Uzytkownik">
+                <ScalarProperty Name="UzytkownikId" ColumnName="UzytkownikId" />
+                <ScalarProperty Name="Imie" ColumnName="Imie" />
+                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Haslo" ColumnName="Haslo" />
+                <ScalarProperty Name="Rola" ColumnName="Rola" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_AktywneSeanse">
+            <EntityTypeMapping TypeName="KinoModel.v_AktywneSeanse">
+              <MappingFragment StoreEntitySet="v_AktywneSeanse">
+                <ScalarProperty Name="SeansId" ColumnName="SeansId" />
+                <ScalarProperty Name="Tytul" ColumnName="Tytul" />
+                <ScalarProperty Name="DataSeansu" ColumnName="DataSeansu" />
+                <ScalarProperty Name="Sala" ColumnName="Sala" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_ObecneFilmy">
+            <EntityTypeMapping TypeName="KinoModel.v_ObecneFilmy">
+              <MappingFragment StoreEntitySet="v_ObecneFilmy">
+                <ScalarProperty Name="Tytul" ColumnName="Tytul" />
+                <ScalarProperty Name="DataSeansu" ColumnName="DataSeansu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_SeanseZPrzychodami">
+            <EntityTypeMapping TypeName="KinoModel.v_SeanseZPrzychodami">
+              <MappingFragment StoreEntitySet="v_SeanseZPrzychodami">
+                <ScalarProperty Name="Tytul" ColumnName="Tytul" />
+                <ScalarProperty Name="DataSeansu" ColumnName="DataSeansu" />
+                <ScalarProperty Name="Przychody" ColumnName="Przychody" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_SprzedazNaFilm">
+            <EntityTypeMapping TypeName="KinoModel.v_SprzedazNaFilm">
+              <MappingFragment StoreEntitySet="v_SprzedazNaFilm">
+                <ScalarProperty Name="Tytul" ColumnName="Tytul" />
+                <ScalarProperty Name="Przychody" ColumnName="Przychody" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_StatystykaUzytkownikow">
+            <EntityTypeMapping TypeName="KinoModel.v_StatystykaUzytkownikow">
+              <MappingFragment StoreEntitySet="v_StatystykaUzytkownikow">
+                <ScalarProperty Name="Imie" ColumnName="Imie" />
+                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+                <ScalarProperty Name="LiczbaZakupionychBiletow" ColumnName="LiczbaZakupionychBiletow" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_ZapelnienieSal">
+            <EntityTypeMapping TypeName="KinoModel.v_ZapelnienieSal">
+              <MappingFragment StoreEntitySet="v_ZapelnienieSal">
+                <ScalarProperty Name="Sala" ColumnName="Sala" />
+                <ScalarProperty Name="LiczbaMiejsc" ColumnName="LiczbaMiejsc" />
+                <ScalarProperty Name="MiejscaZajete" ColumnName="MiejscaZajete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_DodajFilm" FunctionName="KinoModel.Store.sp_DodajFilm" />
+          <FunctionImportMapping FunctionImportName="sp_DodajSeans" FunctionName="KinoModel.Store.sp_DodajSeans" />
+          <FunctionImportMapping FunctionImportName="sp_GenerujRaportDzienny" FunctionName="KinoModel.Store.sp_GenerujRaportDzienny">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KinoModel.sp_GenerujRaportDzienny_Result">
+                <ScalarProperty Name="Tytul" ColumnName="Tytul" />
+                <ScalarProperty Name="DataSeansu" ColumnName="DataSeansu" />
+                <ScalarProperty Name="Przychody" ColumnName="Przychody" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_GenerujRaportMiesieczny" FunctionName="KinoModel.Store.sp_GenerujRaportMiesieczny">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KinoModel.sp_GenerujRaportMiesieczny_Result">
+                <ScalarProperty Name="Tytul" ColumnName="Tytul" />
+                <ScalarProperty Name="DataSeansu" ColumnName="DataSeansu" />
+                <ScalarProperty Name="Przychody" ColumnName="Przychody" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_KupBilet" FunctionName="KinoModel.Store.sp_KupBilet" />
+          <FunctionImportMapping FunctionImportName="sp_UsunSeans" FunctionName="KinoModel.Store.sp_UsunSeans" />
+          <FunctionImportMapping FunctionImportName="sp_UtworzUzytkownika" FunctionName="KinoModel.Store.sp_UtworzUzytkownika" />
+          <FunctionImportMapping FunctionImportName="sp_ZmienDaneFilmu" FunctionName="KinoModel.Store.sp_ZmienDaneFilmu" />
+          <FunctionImportMapping FunctionImportName="sp_ZmienRoleUzytkownika" FunctionName="KinoModel.Store.sp_ZmienRoleUzytkownika" />
+          <FunctionImportMapping FunctionImportName="sp_ZwrocBilet" FunctionName="KinoModel.Store.sp_ZwrocBilet" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

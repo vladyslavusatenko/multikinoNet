@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cc28e1c92a814bc9ab13855694042b66" Name="Diagram1">
+        <EntityTypeShape EntityType="KinoModel.Bilet" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinoModel.Film" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinoModel.HistoriaBiletow" Width="1.5" PointX="5.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinoModel.LogZdarzen" Width="1.5" PointX="7.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinoModel.Miejsce" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinoModel.Sala" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinoModel.Seans" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinoModel.Uzytkownik" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinoModel.v_AktywneSeanse" Width="1.5" PointX="7.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinoModel.v_ObecneFilmy" Width="1.5" PointX="7.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinoModel.v_SeanseZPrzychodami" Width="1.5" PointX="9.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinoModel.v_SprzedazNaFilm" Width="1.5" PointX="9.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinoModel.v_StatystykaUzytkownikow" Width="1.5" PointX="9.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinoModel.v_ZapelnienieSal" Width="1.5" PointX="7.75" PointY="10.625" IsExpanded="true" />
+        <AssociationConnector Association="KinoModel.FK_Bilet_Miejsce" ManuallyRouted="false" />
+        <AssociationConnector Association="KinoModel.FK_Bilet_Seans" ManuallyRouted="false" />
+        <AssociationConnector Association="KinoModel.FK_Bilet_Uzytkownik" ManuallyRouted="false" />
+        <AssociationConnector Association="KinoModel.FK_Seans_Film" ManuallyRouted="false" />
+        <AssociationConnector Association="KinoModel.FK_Miejsce_Sala" ManuallyRouted="false" />
+        <AssociationConnector Association="KinoModel.FK_Seans_Sala" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
