@@ -33,25 +33,25 @@
             this.btnEdytuj = new System.Windows.Forms.Button();
             this.btnUsun = new System.Windows.Forms.Button();
             this.groupBoxDetails = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAnuluj = new System.Windows.Forms.Button();
+            this.picPlakat = new System.Windows.Forms.PictureBox();
+            this.btnZapisz = new System.Windows.Forms.Button();
             this.lblTytul = new System.Windows.Forms.Label();
+            this.btnWybierzPlakat = new System.Windows.Forms.Button();
             this.txtTytul = new System.Windows.Forms.TextBox();
             this.lblGatunek = new System.Windows.Forms.Label();
+            this.lblPlakat = new System.Windows.Forms.Label();
             this.txtGatunek = new System.Windows.Forms.TextBox();
-            this.txtOpis = new System.Windows.Forms.TextBox();
+            this.numCzasTrwania = new System.Windows.Forms.NumericUpDown();
             this.lblOpis = new System.Windows.Forms.Label();
             this.lblCzasTrwania = new System.Windows.Forms.Label();
-            this.numCzasTrwania = new System.Windows.Forms.NumericUpDown();
-            this.lblPlakat = new System.Windows.Forms.Label();
-            this.picPlakat = new System.Windows.Forms.PictureBox();
-            this.btnWybierzPlakat = new System.Windows.Forms.Button();
-            this.btnAnuluj = new System.Windows.Forms.Button();
-            this.btnZapisz = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtOpis = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridFilmy)).BeginInit();
             this.groupBoxDetails.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numCzasTrwania)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPlakat)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPlakat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCzasTrwania)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridFilmy
@@ -108,11 +108,62 @@
             this.groupBoxDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.groupBoxDetails.Location = new System.Drawing.Point(0, 211);
             this.groupBoxDetails.Name = "groupBoxDetails";
-            this.groupBoxDetails.Size = new System.Drawing.Size(518, 338);
+            this.groupBoxDetails.Size = new System.Drawing.Size(518, 359);
             this.groupBoxDetails.TabIndex = 4;
             this.groupBoxDetails.TabStop = false;
             this.groupBoxDetails.Text = "Szszególy filmu";
             this.groupBoxDetails.Resize += new System.EventHandler(this.groupBoxDetails_Resize);
+            // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.btnAnuluj);
+            this.panel1.Controls.Add(this.picPlakat);
+            this.panel1.Controls.Add(this.btnZapisz);
+            this.panel1.Controls.Add(this.lblTytul);
+            this.panel1.Controls.Add(this.btnWybierzPlakat);
+            this.panel1.Controls.Add(this.txtTytul);
+            this.panel1.Controls.Add(this.lblGatunek);
+            this.panel1.Controls.Add(this.lblPlakat);
+            this.panel1.Controls.Add(this.txtGatunek);
+            this.panel1.Controls.Add(this.numCzasTrwania);
+            this.panel1.Controls.Add(this.lblOpis);
+            this.panel1.Controls.Add(this.lblCzasTrwania);
+            this.panel1.Controls.Add(this.txtOpis);
+            this.panel1.Location = new System.Drawing.Point(12, 38);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(498, 284);
+            this.panel1.TabIndex = 10;
+            // 
+            // btnAnuluj
+            // 
+            this.btnAnuluj.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.btnAnuluj.Location = new System.Drawing.Point(397, 466);
+            this.btnAnuluj.Name = "btnAnuluj";
+            this.btnAnuluj.Size = new System.Drawing.Size(81, 34);
+            this.btnAnuluj.TabIndex = 5;
+            this.btnAnuluj.Text = "Anuluj";
+            this.btnAnuluj.UseVisualStyleBackColor = true;
+            this.btnAnuluj.Click += new System.EventHandler(this.btnAnuluj_Click);
+            // 
+            // picPlakat
+            // 
+            this.picPlakat.Location = new System.Drawing.Point(176, 223);
+            this.picPlakat.Name = "picPlakat";
+            this.picPlakat.Size = new System.Drawing.Size(201, 190);
+            this.picPlakat.TabIndex = 9;
+            this.picPlakat.TabStop = false;
+            // 
+            // btnZapisz
+            // 
+            this.btnZapisz.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.btnZapisz.Location = new System.Drawing.Point(3, 466);
+            this.btnZapisz.Name = "btnZapisz";
+            this.btnZapisz.Size = new System.Drawing.Size(81, 34);
+            this.btnZapisz.TabIndex = 6;
+            this.btnZapisz.Text = "Zapisz";
+            this.btnZapisz.UseVisualStyleBackColor = true;
+            this.btnZapisz.Click += new System.EventHandler(this.btnZapisz_Click);
             // 
             // lblTytul
             // 
@@ -123,6 +174,17 @@
             this.lblTytul.Size = new System.Drawing.Size(45, 20);
             this.lblTytul.TabIndex = 0;
             this.lblTytul.Text = "Tytuł";
+            // 
+            // btnWybierzPlakat
+            // 
+            this.btnWybierzPlakat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.btnWybierzPlakat.Location = new System.Drawing.Point(296, 419);
+            this.btnWybierzPlakat.Name = "btnWybierzPlakat";
+            this.btnWybierzPlakat.Size = new System.Drawing.Size(81, 25);
+            this.btnWybierzPlakat.TabIndex = 5;
+            this.btnWybierzPlakat.Text = "Dodaj";
+            this.btnWybierzPlakat.UseVisualStyleBackColor = true;
+            this.btnWybierzPlakat.Click += new System.EventHandler(this.btnWybierzPlakat_Click);
             // 
             // txtTytul
             // 
@@ -142,6 +204,16 @@
             this.lblGatunek.TabIndex = 2;
             this.lblGatunek.Text = "Gatunek";
             // 
+            // lblPlakat
+            // 
+            this.lblPlakat.AutoSize = true;
+            this.lblPlakat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.lblPlakat.Location = new System.Drawing.Point(57, 223);
+            this.lblPlakat.Name = "lblPlakat";
+            this.lblPlakat.Size = new System.Drawing.Size(55, 20);
+            this.lblPlakat.TabIndex = 8;
+            this.lblPlakat.Text = "Plakat";
+            // 
             // txtGatunek
             // 
             this.txtGatunek.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
@@ -150,14 +222,18 @@
             this.txtGatunek.Size = new System.Drawing.Size(244, 26);
             this.txtGatunek.TabIndex = 3;
             // 
-            // txtOpis
+            // numCzasTrwania
             // 
-            this.txtOpis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.txtOpis.Location = new System.Drawing.Point(176, 91);
-            this.txtOpis.Multiline = true;
-            this.txtOpis.Name = "txtOpis";
-            this.txtOpis.Size = new System.Drawing.Size(244, 65);
-            this.txtOpis.TabIndex = 5;
+            this.numCzasTrwania.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.numCzasTrwania.Location = new System.Drawing.Point(176, 171);
+            this.numCzasTrwania.Maximum = new decimal(new int[] {
+            240,
+            0,
+            0,
+            0});
+            this.numCzasTrwania.Name = "numCzasTrwania";
+            this.numCzasTrwania.Size = new System.Drawing.Size(120, 26);
+            this.numCzasTrwania.TabIndex = 7;
             // 
             // lblOpis
             // 
@@ -179,96 +255,20 @@
             this.lblCzasTrwania.TabIndex = 6;
             this.lblCzasTrwania.Text = "Czas Trwania";
             // 
-            // numCzasTrwania
+            // txtOpis
             // 
-            this.numCzasTrwania.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.numCzasTrwania.Location = new System.Drawing.Point(176, 171);
-            this.numCzasTrwania.Maximum = new decimal(new int[] {
-            240,
-            0,
-            0,
-            0});
-            this.numCzasTrwania.Name = "numCzasTrwania";
-            this.numCzasTrwania.Size = new System.Drawing.Size(120, 26);
-            this.numCzasTrwania.TabIndex = 7;
-            // 
-            // lblPlakat
-            // 
-            this.lblPlakat.AutoSize = true;
-            this.lblPlakat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.lblPlakat.Location = new System.Drawing.Point(57, 223);
-            this.lblPlakat.Name = "lblPlakat";
-            this.lblPlakat.Size = new System.Drawing.Size(55, 20);
-            this.lblPlakat.TabIndex = 8;
-            this.lblPlakat.Text = "Plakat";
-            // 
-            // picPlakat
-            // 
-            this.picPlakat.Location = new System.Drawing.Point(176, 223);
-            this.picPlakat.Name = "picPlakat";
-            this.picPlakat.Size = new System.Drawing.Size(201, 190);
-            this.picPlakat.TabIndex = 9;
-            this.picPlakat.TabStop = false;
-            // 
-            // btnWybierzPlakat
-            // 
-            this.btnWybierzPlakat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.btnWybierzPlakat.Location = new System.Drawing.Point(296, 419);
-            this.btnWybierzPlakat.Name = "btnWybierzPlakat";
-            this.btnWybierzPlakat.Size = new System.Drawing.Size(81, 25);
-            this.btnWybierzPlakat.TabIndex = 5;
-            this.btnWybierzPlakat.Text = "Dodaj";
-            this.btnWybierzPlakat.UseVisualStyleBackColor = true;
-            this.btnWybierzPlakat.Click += new System.EventHandler(this.btnWybierzPlakat_Click);
-            // 
-            // btnAnuluj
-            // 
-            this.btnAnuluj.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.btnAnuluj.Location = new System.Drawing.Point(395, 501);
-            this.btnAnuluj.Name = "btnAnuluj";
-            this.btnAnuluj.Size = new System.Drawing.Size(81, 34);
-            this.btnAnuluj.TabIndex = 5;
-            this.btnAnuluj.Text = "Anuluj";
-            this.btnAnuluj.UseVisualStyleBackColor = true;
-            this.btnAnuluj.Click += new System.EventHandler(this.btnAnuluj_Click);
-            // 
-            // btnZapisz
-            // 
-            this.btnZapisz.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.btnZapisz.Location = new System.Drawing.Point(1, 501);
-            this.btnZapisz.Name = "btnZapisz";
-            this.btnZapisz.Size = new System.Drawing.Size(81, 34);
-            this.btnZapisz.TabIndex = 6;
-            this.btnZapisz.Text = "Zapisz";
-            this.btnZapisz.UseVisualStyleBackColor = true;
-            this.btnZapisz.Click += new System.EventHandler(this.btnZapisz_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.btnAnuluj);
-            this.panel1.Controls.Add(this.picPlakat);
-            this.panel1.Controls.Add(this.btnZapisz);
-            this.panel1.Controls.Add(this.lblTytul);
-            this.panel1.Controls.Add(this.btnWybierzPlakat);
-            this.panel1.Controls.Add(this.txtTytul);
-            this.panel1.Controls.Add(this.lblGatunek);
-            this.panel1.Controls.Add(this.lblPlakat);
-            this.panel1.Controls.Add(this.txtGatunek);
-            this.panel1.Controls.Add(this.numCzasTrwania);
-            this.panel1.Controls.Add(this.lblOpis);
-            this.panel1.Controls.Add(this.lblCzasTrwania);
-            this.panel1.Controls.Add(this.txtOpis);
-            this.panel1.Location = new System.Drawing.Point(12, 38);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(498, 273);
-            this.panel1.TabIndex = 10;
+            this.txtOpis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.txtOpis.Location = new System.Drawing.Point(176, 91);
+            this.txtOpis.Multiline = true;
+            this.txtOpis.Name = "txtOpis";
+            this.txtOpis.Size = new System.Drawing.Size(244, 65);
+            this.txtOpis.TabIndex = 5;
             // 
             // FilmyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 561);
+            this.ClientSize = new System.Drawing.Size(800, 571);
             this.Controls.Add(this.groupBoxDetails);
             this.Controls.Add(this.btnUsun);
             this.Controls.Add(this.btnEdytuj);
@@ -279,10 +279,10 @@
             this.Load += new System.EventHandler(this.FilmyForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridFilmy)).EndInit();
             this.groupBoxDetails.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numCzasTrwania)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPlakat)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPlakat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCzasTrwania)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

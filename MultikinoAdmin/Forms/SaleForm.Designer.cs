@@ -34,14 +34,14 @@
             this.btnEdytuj = new System.Windows.Forms.Button();
             this.groupBoxDetails = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblNazwa = new System.Windows.Forms.Label();
-            this.txtNazwa = new System.Windows.Forms.TextBox();
-            this.lblLiczbaMiejsc = new System.Windows.Forms.Label();
-            this.numLiczbaMiejsc = new System.Windows.Forms.NumericUpDown();
-            this.listBoxMiejsca = new System.Windows.Forms.ListBox();
+            this.lblMiejsca = new System.Windows.Forms.Label();
             this.btnAnuluj = new System.Windows.Forms.Button();
             this.btnZapisz = new System.Windows.Forms.Button();
-            this.lblMiejsca = new System.Windows.Forms.Label();
+            this.listBoxMiejsca = new System.Windows.Forms.ListBox();
+            this.numLiczbaMiejsc = new System.Windows.Forms.NumericUpDown();
+            this.lblLiczbaMiejsc = new System.Windows.Forms.Label();
+            this.lblNazwa = new System.Windows.Forms.Label();
+            this.txtNazwa = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSale)).BeginInit();
             this.groupBoxDetails.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -120,46 +120,14 @@
             this.panel1.Size = new System.Drawing.Size(498, 316);
             this.panel1.TabIndex = 0;
             // 
-            // lblNazwa
+            // lblMiejsca
             // 
-            this.lblNazwa.AutoSize = true;
-            this.lblNazwa.Location = new System.Drawing.Point(57, 40);
-            this.lblNazwa.Name = "lblNazwa";
-            this.lblNazwa.Size = new System.Drawing.Size(60, 20);
-            this.lblNazwa.TabIndex = 5;
-            this.lblNazwa.Text = "Nazwa";
-            // 
-            // txtNazwa
-            // 
-            this.txtNazwa.Location = new System.Drawing.Point(215, 37);
-            this.txtNazwa.Name = "txtNazwa";
-            this.txtNazwa.Size = new System.Drawing.Size(249, 26);
-            this.txtNazwa.TabIndex = 6;
-            // 
-            // lblLiczbaMiejsc
-            // 
-            this.lblLiczbaMiejsc.AutoSize = true;
-            this.lblLiczbaMiejsc.Location = new System.Drawing.Point(57, 86);
-            this.lblLiczbaMiejsc.Name = "lblLiczbaMiejsc";
-            this.lblLiczbaMiejsc.Size = new System.Drawing.Size(113, 20);
-            this.lblLiczbaMiejsc.TabIndex = 7;
-            this.lblLiczbaMiejsc.Text = "Liczba miejsc";
-            // 
-            // numLiczbaMiejsc
-            // 
-            this.numLiczbaMiejsc.Location = new System.Drawing.Point(215, 84);
-            this.numLiczbaMiejsc.Name = "numLiczbaMiejsc";
-            this.numLiczbaMiejsc.Size = new System.Drawing.Size(120, 26);
-            this.numLiczbaMiejsc.TabIndex = 8;
-            // 
-            // listBoxMiejsca
-            // 
-            this.listBoxMiejsca.FormattingEnabled = true;
-            this.listBoxMiejsca.ItemHeight = 20;
-            this.listBoxMiejsca.Location = new System.Drawing.Point(215, 129);
-            this.listBoxMiejsca.Name = "listBoxMiejsca";
-            this.listBoxMiejsca.Size = new System.Drawing.Size(249, 104);
-            this.listBoxMiejsca.TabIndex = 9;
+            this.lblMiejsca.AutoSize = true;
+            this.lblMiejsca.Location = new System.Drawing.Point(57, 129);
+            this.lblMiejsca.Name = "lblMiejsca";
+            this.lblMiejsca.Size = new System.Drawing.Size(67, 20);
+            this.lblMiejsca.TabIndex = 10;
+            this.lblMiejsca.Text = "Miejsca";
             // 
             // btnAnuluj
             // 
@@ -181,20 +149,52 @@
             this.btnZapisz.UseVisualStyleBackColor = true;
             this.btnZapisz.Click += new System.EventHandler(this.btnZapisz_Click);
             // 
-            // lblMiejsca
+            // listBoxMiejsca
             // 
-            this.lblMiejsca.AutoSize = true;
-            this.lblMiejsca.Location = new System.Drawing.Point(57, 129);
-            this.lblMiejsca.Name = "lblMiejsca";
-            this.lblMiejsca.Size = new System.Drawing.Size(67, 20);
-            this.lblMiejsca.TabIndex = 10;
-            this.lblMiejsca.Text = "Miejsca";
+            this.listBoxMiejsca.FormattingEnabled = true;
+            this.listBoxMiejsca.ItemHeight = 20;
+            this.listBoxMiejsca.Location = new System.Drawing.Point(215, 129);
+            this.listBoxMiejsca.Name = "listBoxMiejsca";
+            this.listBoxMiejsca.Size = new System.Drawing.Size(249, 104);
+            this.listBoxMiejsca.TabIndex = 9;
+            // 
+            // numLiczbaMiejsc
+            // 
+            this.numLiczbaMiejsc.Location = new System.Drawing.Point(215, 84);
+            this.numLiczbaMiejsc.Name = "numLiczbaMiejsc";
+            this.numLiczbaMiejsc.Size = new System.Drawing.Size(120, 26);
+            this.numLiczbaMiejsc.TabIndex = 8;
+            // 
+            // lblLiczbaMiejsc
+            // 
+            this.lblLiczbaMiejsc.AutoSize = true;
+            this.lblLiczbaMiejsc.Location = new System.Drawing.Point(57, 86);
+            this.lblLiczbaMiejsc.Name = "lblLiczbaMiejsc";
+            this.lblLiczbaMiejsc.Size = new System.Drawing.Size(113, 20);
+            this.lblLiczbaMiejsc.TabIndex = 7;
+            this.lblLiczbaMiejsc.Text = "Liczba miejsc";
+            // 
+            // lblNazwa
+            // 
+            this.lblNazwa.AutoSize = true;
+            this.lblNazwa.Location = new System.Drawing.Point(57, 40);
+            this.lblNazwa.Name = "lblNazwa";
+            this.lblNazwa.Size = new System.Drawing.Size(60, 20);
+            this.lblNazwa.TabIndex = 5;
+            this.lblNazwa.Text = "Nazwa";
+            // 
+            // txtNazwa
+            // 
+            this.txtNazwa.Location = new System.Drawing.Point(215, 37);
+            this.txtNazwa.Name = "txtNazwa";
+            this.txtNazwa.Size = new System.Drawing.Size(249, 26);
+            this.txtNazwa.TabIndex = 6;
             // 
             // SaleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 561);
+            this.ClientSize = new System.Drawing.Size(800, 581);
             this.Controls.Add(this.groupBoxDetails);
             this.Controls.Add(this.btnEdytuj);
             this.Controls.Add(this.btnUsun);

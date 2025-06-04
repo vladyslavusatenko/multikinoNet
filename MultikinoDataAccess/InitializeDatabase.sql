@@ -1,5 +1,6 @@
 ﻿
 
+
 -- Create Roles
 CREATE ROLE AdminRole;
 GO
@@ -7,19 +8,19 @@ CREATE ROLE UserRole;
 GO
 -- Create Logins and Users
 
-CREATE LOGIN admin_user WITH PASSWORD = 'Admin123!';
-GO
-CREATE USER admin_user FOR LOGIN admin_user;
-GO
-EXEC sp_addrolemember 'AdminRole', 'admin_user';
-GO
+--CREATE LOGIN admin_user WITH PASSWORD = 'Admin123!';
+--GO
+--CREATE USER admin_user FOR LOGIN admin_user;
+--GO
+--EXEC sp_addrolemember 'AdminRole', 'admin_user';
+--GO
 
-CREATE LOGIN regular_user WITH PASSWORD = 'User123!';
-GO
-CREATE USER regular_user FOR LOGIN regular_user;
-GO
-EXEC sp_addrolemember 'UserRole', 'regular_user';
-GO
+--CREATE LOGIN regular_user WITH PASSWORD = 'User123!';
+--GO
+--CREATE USER regular_user FOR LOGIN regular_user;
+--GO
+--EXEC sp_addrolemember 'UserRole', 'regular_user';
+--GO
 -- Grant Permissions
 GRANT SELECT, INSERT, UPDATE, DELETE, EXECUTE ON SCHEMA::dbo TO AdminRole;
 GO

@@ -374,6 +374,9 @@ namespace MultikinoAdmin.Forms
 
         }
 
+        private void tabPagePrzychody_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

@@ -70,6 +70,7 @@
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.txtPassword.Location = new System.Drawing.Point(355, 261);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(198, 26);
             this.txtPassword.TabIndex = 3;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
@@ -78,7 +79,7 @@
             // 
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.lblStatus.Location = new System.Drawing.Point(12, 532);
+            this.lblStatus.Location = new System.Drawing.Point(12, 542);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(57, 20);
             this.lblStatus.TabIndex = 4;
@@ -98,9 +99,10 @@
             // 
             // LoginForm
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 561);
+            this.ClientSize = new System.Drawing.Size(800, 571);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.txtPassword);

@@ -36,29 +36,29 @@
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPagePrzychody = new System.Windows.Forms.TabPage();
-            this.tabPageZapelnienie = new System.Windows.Forms.TabPage();
-            this.tabPageDzienne = new System.Windows.Forms.TabPage();
-            this.tabPageMiesieczne = new System.Windows.Forms.TabPage();
-            this.tabPageTrendy = new System.Windows.Forms.TabPage();
-            this.chartPrzychody = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.dataGridZapelnienie = new System.Windows.Forms.DataGridView();
-            this.dataGridDzienne = new System.Windows.Forms.DataGridView();
-            this.btnExportDzienne = new System.Windows.Forms.Button();
-            this.dataGridMiesieczne = new System.Windows.Forms.DataGridView();
-            this.btnExportMiesieczne = new System.Windows.Forms.Button();
-            this.chartTrendy = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnExportPrzychodyWykres = new System.Windows.Forms.Button();
+            this.chartPrzychody = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.tabPageZapelnienie = new System.Windows.Forms.TabPage();
+            this.dataGridZapelnienie = new System.Windows.Forms.DataGridView();
+            this.tabPageDzienne = new System.Windows.Forms.TabPage();
+            this.btnExportDzienne = new System.Windows.Forms.Button();
+            this.dataGridDzienne = new System.Windows.Forms.DataGridView();
+            this.tabPageMiesieczne = new System.Windows.Forms.TabPage();
+            this.btnExportMiesieczne = new System.Windows.Forms.Button();
+            this.dataGridMiesieczne = new System.Windows.Forms.DataGridView();
+            this.tabPageTrendy = new System.Windows.Forms.TabPage();
             this.btnExportTrendyWykres = new System.Windows.Forms.Button();
+            this.chartTrendy = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabControl1.SuspendLayout();
             this.tabPagePrzychody.SuspendLayout();
-            this.tabPageZapelnienie.SuspendLayout();
-            this.tabPageDzienne.SuspendLayout();
-            this.tabPageMiesieczne.SuspendLayout();
-            this.tabPageTrendy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartPrzychody)).BeginInit();
+            this.tabPageZapelnienie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridZapelnienie)).BeginInit();
+            this.tabPageDzienne.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDzienne)).BeginInit();
+            this.tabPageMiesieczne.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridMiesieczne)).BeginInit();
+            this.tabPageTrendy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartTrendy)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,6 +88,34 @@
             this.tabPagePrzychody.TabIndex = 0;
             this.tabPagePrzychody.Text = "Przychody na film";
             this.tabPagePrzychody.UseVisualStyleBackColor = true;
+            this.tabPagePrzychody.Click += new System.EventHandler(this.tabPagePrzychody_Click);
+            // 
+            // btnExportPrzychodyWykres
+            // 
+            this.btnExportPrzychodyWykres.Location = new System.Drawing.Point(694, 377);
+            this.btnExportPrzychodyWykres.Name = "btnExportPrzychodyWykres";
+            this.btnExportPrzychodyWykres.Size = new System.Drawing.Size(90, 32);
+            this.btnExportPrzychodyWykres.TabIndex = 1;
+            this.btnExportPrzychodyWykres.Text = "Eksportuj";
+            this.btnExportPrzychodyWykres.UseVisualStyleBackColor = true;
+            this.btnExportPrzychodyWykres.Click += new System.EventHandler(this.btnExportPrzychodyWykres_Click);
+            // 
+            // chartPrzychody
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chartPrzychody.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartPrzychody.Legends.Add(legend1);
+            this.chartPrzychody.Location = new System.Drawing.Point(85, 45);
+            this.chartPrzychody.Name = "chartPrzychody";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartPrzychody.Series.Add(series1);
+            this.chartPrzychody.Size = new System.Drawing.Size(620, 326);
+            this.chartPrzychody.TabIndex = 0;
+            this.chartPrzychody.Text = "chart1";
+            this.chartPrzychody.Click += new System.EventHandler(this.chartPrzychody_Click);
             // 
             // tabPageZapelnienie
             // 
@@ -99,6 +127,14 @@
             this.tabPageZapelnienie.TabIndex = 1;
             this.tabPageZapelnienie.Text = "Zapełnienie sal";
             this.tabPageZapelnienie.UseVisualStyleBackColor = true;
+            // 
+            // dataGridZapelnienie
+            // 
+            this.dataGridZapelnienie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridZapelnienie.Location = new System.Drawing.Point(8, 8);
+            this.dataGridZapelnienie.Name = "dataGridZapelnienie";
+            this.dataGridZapelnienie.Size = new System.Drawing.Size(776, 401);
+            this.dataGridZapelnienie.TabIndex = 0;
             // 
             // tabPageDzienne
             // 
@@ -112,6 +148,24 @@
             this.tabPageDzienne.Text = "Raport dzienny";
             this.tabPageDzienne.UseVisualStyleBackColor = true;
             // 
+            // btnExportDzienne
+            // 
+            this.btnExportDzienne.Location = new System.Drawing.Point(695, 379);
+            this.btnExportDzienne.Name = "btnExportDzienne";
+            this.btnExportDzienne.Size = new System.Drawing.Size(90, 32);
+            this.btnExportDzienne.TabIndex = 1;
+            this.btnExportDzienne.Text = "Exportuj";
+            this.btnExportDzienne.UseVisualStyleBackColor = true;
+            this.btnExportDzienne.Click += new System.EventHandler(this.btnExportDzienne_Click);
+            // 
+            // dataGridDzienne
+            // 
+            this.dataGridDzienne.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridDzienne.Location = new System.Drawing.Point(8, 8);
+            this.dataGridDzienne.Name = "dataGridDzienne";
+            this.dataGridDzienne.Size = new System.Drawing.Size(776, 348);
+            this.dataGridDzienne.TabIndex = 0;
+            // 
             // tabPageMiesieczne
             // 
             this.tabPageMiesieczne.Controls.Add(this.btnExportMiesieczne);
@@ -123,6 +177,24 @@
             this.tabPageMiesieczne.TabIndex = 3;
             this.tabPageMiesieczne.Text = "Raport miesięczny";
             this.tabPageMiesieczne.UseVisualStyleBackColor = true;
+            // 
+            // btnExportMiesieczne
+            // 
+            this.btnExportMiesieczne.Location = new System.Drawing.Point(695, 379);
+            this.btnExportMiesieczne.Name = "btnExportMiesieczne";
+            this.btnExportMiesieczne.Size = new System.Drawing.Size(90, 32);
+            this.btnExportMiesieczne.TabIndex = 1;
+            this.btnExportMiesieczne.Text = "Eksportuj";
+            this.btnExportMiesieczne.UseVisualStyleBackColor = true;
+            this.btnExportMiesieczne.Click += new System.EventHandler(this.btnExportMiesieczne_Click);
+            // 
+            // dataGridMiesieczne
+            // 
+            this.dataGridMiesieczne.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridMiesieczne.Location = new System.Drawing.Point(8, 8);
+            this.dataGridMiesieczne.Name = "dataGridMiesieczne";
+            this.dataGridMiesieczne.Size = new System.Drawing.Size(776, 348);
+            this.dataGridMiesieczne.TabIndex = 0;
             // 
             // tabPageTrendy
             // 
@@ -136,66 +208,15 @@
             this.tabPageTrendy.Text = "Trendy sprzedaży";
             this.tabPageTrendy.UseVisualStyleBackColor = true;
             // 
-            // chartPrzychody
+            // btnExportTrendyWykres
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartPrzychody.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartPrzychody.Legends.Add(legend1);
-            this.chartPrzychody.Location = new System.Drawing.Point(90, 32);
-            this.chartPrzychody.Name = "chartPrzychody";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartPrzychody.Series.Add(series1);
-            this.chartPrzychody.Size = new System.Drawing.Size(620, 326);
-            this.chartPrzychody.TabIndex = 0;
-            this.chartPrzychody.Text = "chart1";
-            this.chartPrzychody.Click += new System.EventHandler(this.chartPrzychody_Click);
-            // 
-            // dataGridZapelnienie
-            // 
-            this.dataGridZapelnienie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridZapelnienie.Location = new System.Drawing.Point(8, 8);
-            this.dataGridZapelnienie.Name = "dataGridZapelnienie";
-            this.dataGridZapelnienie.Size = new System.Drawing.Size(776, 401);
-            this.dataGridZapelnienie.TabIndex = 0;
-            // 
-            // dataGridDzienne
-            // 
-            this.dataGridDzienne.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridDzienne.Location = new System.Drawing.Point(8, 8);
-            this.dataGridDzienne.Name = "dataGridDzienne";
-            this.dataGridDzienne.Size = new System.Drawing.Size(776, 348);
-            this.dataGridDzienne.TabIndex = 0;
-            // 
-            // btnExportDzienne
-            // 
-            this.btnExportDzienne.Location = new System.Drawing.Point(695, 379);
-            this.btnExportDzienne.Name = "btnExportDzienne";
-            this.btnExportDzienne.Size = new System.Drawing.Size(90, 32);
-            this.btnExportDzienne.TabIndex = 1;
-            this.btnExportDzienne.Text = "Exportuj";
-            this.btnExportDzienne.UseVisualStyleBackColor = true;
-            this.btnExportDzienne.Click += new System.EventHandler(this.btnExportDzienne_Click);
-            // 
-            // dataGridMiesieczne
-            // 
-            this.dataGridMiesieczne.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridMiesieczne.Location = new System.Drawing.Point(8, 8);
-            this.dataGridMiesieczne.Name = "dataGridMiesieczne";
-            this.dataGridMiesieczne.Size = new System.Drawing.Size(776, 348);
-            this.dataGridMiesieczne.TabIndex = 0;
-            // 
-            // btnExportMiesieczne
-            // 
-            this.btnExportMiesieczne.Location = new System.Drawing.Point(695, 379);
-            this.btnExportMiesieczne.Name = "btnExportMiesieczne";
-            this.btnExportMiesieczne.Size = new System.Drawing.Size(90, 32);
-            this.btnExportMiesieczne.TabIndex = 1;
-            this.btnExportMiesieczne.Text = "Eksportuj";
-            this.btnExportMiesieczne.UseVisualStyleBackColor = true;
-            this.btnExportMiesieczne.Click += new System.EventHandler(this.btnExportMiesieczne_Click);
+            this.btnExportTrendyWykres.Location = new System.Drawing.Point(694, 377);
+            this.btnExportTrendyWykres.Name = "btnExportTrendyWykres";
+            this.btnExportTrendyWykres.Size = new System.Drawing.Size(90, 32);
+            this.btnExportTrendyWykres.TabIndex = 1;
+            this.btnExportTrendyWykres.Text = "Eksportuj ";
+            this.btnExportTrendyWykres.UseVisualStyleBackColor = true;
+            this.btnExportTrendyWykres.Click += new System.EventHandler(this.btnExportTrendyWykres_Click);
             // 
             // chartTrendy
             // 
@@ -213,45 +234,25 @@
             this.chartTrendy.TabIndex = 0;
             this.chartTrendy.Text = "chart1";
             // 
-            // btnExportPrzychodyWykres
-            // 
-            this.btnExportPrzychodyWykres.Location = new System.Drawing.Point(694, 377);
-            this.btnExportPrzychodyWykres.Name = "btnExportPrzychodyWykres";
-            this.btnExportPrzychodyWykres.Size = new System.Drawing.Size(90, 32);
-            this.btnExportPrzychodyWykres.TabIndex = 1;
-            this.btnExportPrzychodyWykres.Text = "Eksportuj";
-            this.btnExportPrzychodyWykres.UseVisualStyleBackColor = true;
-            this.btnExportPrzychodyWykres.Click += new System.EventHandler(this.btnExportPrzychodyWykres_Click);
-            // 
-            // btnExportTrendyWykres
-            // 
-            this.btnExportTrendyWykres.Location = new System.Drawing.Point(694, 377);
-            this.btnExportTrendyWykres.Name = "btnExportTrendyWykres";
-            this.btnExportTrendyWykres.Size = new System.Drawing.Size(90, 32);
-            this.btnExportTrendyWykres.TabIndex = 1;
-            this.btnExportTrendyWykres.Text = "Eksportuj ";
-            this.btnExportTrendyWykres.UseVisualStyleBackColor = true;
-            this.btnExportTrendyWykres.Click += new System.EventHandler(this.btnExportTrendyWykres_Click);
-            // 
             // RaportyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 571);
             this.Controls.Add(this.tabControl1);
             this.Name = "RaportyForm";
             this.Text = "RaportyForm";
             this.Load += new System.EventHandler(this.RaportyForm_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPagePrzychody.ResumeLayout(false);
-            this.tabPageZapelnienie.ResumeLayout(false);
-            this.tabPageDzienne.ResumeLayout(false);
-            this.tabPageMiesieczne.ResumeLayout(false);
-            this.tabPageTrendy.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartPrzychody)).EndInit();
+            this.tabPageZapelnienie.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridZapelnienie)).EndInit();
+            this.tabPageDzienne.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDzienne)).EndInit();
+            this.tabPageMiesieczne.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridMiesieczne)).EndInit();
+            this.tabPageTrendy.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartTrendy)).EndInit();
             this.ResumeLayout(false);
 

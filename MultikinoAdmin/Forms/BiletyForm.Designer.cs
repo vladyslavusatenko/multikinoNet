@@ -32,19 +32,19 @@
             this.btnDrukuj = new System.Windows.Forms.Button();
             this.btnUsun = new System.Windows.Forms.Button();
             this.groupBoxDetails = new System.Windows.Forms.GroupBox();
-            this.lblFilm = new System.Windows.Forms.Label();
-            this.txtFilm = new System.Windows.Forms.TextBox();
-            this.lblData = new System.Windows.Forms.Label();
-            this.txtData = new System.Windows.Forms.TextBox();
-            this.lblMiejsce = new System.Windows.Forms.Label();
-            this.txtMiejsce = new System.Windows.Forms.TextBox();
-            this.lblKlient = new System.Windows.Forms.Label();
-            this.txtKlient = new System.Windows.Forms.TextBox();
-            this.lblCena = new System.Windows.Forms.Label();
-            this.txtCena = new System.Windows.Forms.TextBox();
-            this.lblDataZakupu = new System.Windows.Forms.Label();
-            this.txtDataZakupu = new System.Windows.Forms.TextBox();
             this.btnZamknij = new System.Windows.Forms.Button();
+            this.txtDataZakupu = new System.Windows.Forms.TextBox();
+            this.txtData = new System.Windows.Forms.TextBox();
+            this.lblDataZakupu = new System.Windows.Forms.Label();
+            this.lblData = new System.Windows.Forms.Label();
+            this.lblMiejsce = new System.Windows.Forms.Label();
+            this.txtCena = new System.Windows.Forms.TextBox();
+            this.txtFilm = new System.Windows.Forms.TextBox();
+            this.lblCena = new System.Windows.Forms.Label();
+            this.txtMiejsce = new System.Windows.Forms.TextBox();
+            this.lblFilm = new System.Windows.Forms.Label();
+            this.txtKlient = new System.Windows.Forms.TextBox();
+            this.lblKlient = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridBilety)).BeginInit();
             this.groupBoxDetails.SuspendLayout();
             this.SuspendLayout();
@@ -108,24 +108,41 @@
             this.groupBoxDetails.TabStop = false;
             this.groupBoxDetails.Text = "Szczególy biletu";
             // 
-            // lblFilm
+            // btnZamknij
             // 
-            this.lblFilm.AutoSize = true;
-            this.lblFilm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.lblFilm.Location = new System.Drawing.Point(57, 44);
-            this.lblFilm.Name = "lblFilm";
-            this.lblFilm.Size = new System.Drawing.Size(41, 20);
-            this.lblFilm.TabIndex = 0;
-            this.lblFilm.Text = "Film";
+            this.btnZamknij.Location = new System.Drawing.Point(415, 324);
+            this.btnZamknij.Name = "btnZamknij";
+            this.btnZamknij.Size = new System.Drawing.Size(78, 30);
+            this.btnZamknij.TabIndex = 12;
+            this.btnZamknij.Text = "Zamknij";
+            this.btnZamknij.UseVisualStyleBackColor = true;
+            this.btnZamknij.Click += new System.EventHandler(this.btnZamknij_Click);
             // 
-            // txtFilm
+            // txtDataZakupu
             // 
-            this.txtFilm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.txtFilm.Location = new System.Drawing.Point(193, 38);
-            this.txtFilm.Name = "txtFilm";
-            this.txtFilm.Size = new System.Drawing.Size(220, 26);
-            this.txtFilm.TabIndex = 1;
-            this.txtFilm.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtDataZakupu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.txtDataZakupu.Location = new System.Drawing.Point(193, 262);
+            this.txtDataZakupu.Name = "txtDataZakupu";
+            this.txtDataZakupu.Size = new System.Drawing.Size(220, 26);
+            this.txtDataZakupu.TabIndex = 11;
+            // 
+            // txtData
+            // 
+            this.txtData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.txtData.Location = new System.Drawing.Point(193, 84);
+            this.txtData.Name = "txtData";
+            this.txtData.Size = new System.Drawing.Size(220, 26);
+            this.txtData.TabIndex = 3;
+            // 
+            // lblDataZakupu
+            // 
+            this.lblDataZakupu.AutoSize = true;
+            this.lblDataZakupu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.lblDataZakupu.Location = new System.Drawing.Point(57, 268);
+            this.lblDataZakupu.Name = "lblDataZakupu";
+            this.lblDataZakupu.Size = new System.Drawing.Size(103, 20);
+            this.lblDataZakupu.TabIndex = 10;
+            this.lblDataZakupu.Text = "Data zakupu";
             // 
             // lblData
             // 
@@ -136,14 +153,6 @@
             this.lblData.Size = new System.Drawing.Size(45, 20);
             this.lblData.TabIndex = 2;
             this.lblData.Text = "Data";
-            // 
-            // txtData
-            // 
-            this.txtData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.txtData.Location = new System.Drawing.Point(193, 84);
-            this.txtData.Name = "txtData";
-            this.txtData.Size = new System.Drawing.Size(220, 26);
-            this.txtData.TabIndex = 3;
             // 
             // lblMiejsce
             // 
@@ -156,32 +165,22 @@
             this.lblMiejsce.Text = "Miejsce";
             this.lblMiejsce.Click += new System.EventHandler(this.label3_Click);
             // 
-            // txtMiejsce
+            // txtCena
             // 
-            this.txtMiejsce.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.txtMiejsce.Location = new System.Drawing.Point(193, 133);
-            this.txtMiejsce.Name = "txtMiejsce";
-            this.txtMiejsce.Size = new System.Drawing.Size(220, 26);
-            this.txtMiejsce.TabIndex = 5;
-            this.txtMiejsce.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.txtCena.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.txtCena.Location = new System.Drawing.Point(193, 221);
+            this.txtCena.Name = "txtCena";
+            this.txtCena.Size = new System.Drawing.Size(220, 26);
+            this.txtCena.TabIndex = 9;
             // 
-            // lblKlient
+            // txtFilm
             // 
-            this.lblKlient.AutoSize = true;
-            this.lblKlient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.lblKlient.Location = new System.Drawing.Point(57, 181);
-            this.lblKlient.Name = "lblKlient";
-            this.lblKlient.Size = new System.Drawing.Size(51, 20);
-            this.lblKlient.TabIndex = 6;
-            this.lblKlient.Text = "Klient";
-            // 
-            // txtKlient
-            // 
-            this.txtKlient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.txtKlient.Location = new System.Drawing.Point(193, 178);
-            this.txtKlient.Name = "txtKlient";
-            this.txtKlient.Size = new System.Drawing.Size(220, 26);
-            this.txtKlient.TabIndex = 7;
+            this.txtFilm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.txtFilm.Location = new System.Drawing.Point(193, 38);
+            this.txtFilm.Name = "txtFilm";
+            this.txtFilm.Size = new System.Drawing.Size(220, 26);
+            this.txtFilm.TabIndex = 1;
+            this.txtFilm.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // lblCena
             // 
@@ -193,47 +192,48 @@
             this.lblCena.TabIndex = 8;
             this.lblCena.Text = "Cena";
             // 
-            // txtCena
+            // txtMiejsce
             // 
-            this.txtCena.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.txtCena.Location = new System.Drawing.Point(193, 221);
-            this.txtCena.Name = "txtCena";
-            this.txtCena.Size = new System.Drawing.Size(220, 26);
-            this.txtCena.TabIndex = 9;
+            this.txtMiejsce.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.txtMiejsce.Location = new System.Drawing.Point(193, 133);
+            this.txtMiejsce.Name = "txtMiejsce";
+            this.txtMiejsce.Size = new System.Drawing.Size(220, 26);
+            this.txtMiejsce.TabIndex = 5;
+            this.txtMiejsce.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // lblDataZakupu
+            // lblFilm
             // 
-            this.lblDataZakupu.AutoSize = true;
-            this.lblDataZakupu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.lblDataZakupu.Location = new System.Drawing.Point(57, 268);
-            this.lblDataZakupu.Name = "lblDataZakupu";
-            this.lblDataZakupu.Size = new System.Drawing.Size(103, 20);
-            this.lblDataZakupu.TabIndex = 10;
-            this.lblDataZakupu.Text = "Data zakupu";
+            this.lblFilm.AutoSize = true;
+            this.lblFilm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.lblFilm.Location = new System.Drawing.Point(57, 44);
+            this.lblFilm.Name = "lblFilm";
+            this.lblFilm.Size = new System.Drawing.Size(41, 20);
+            this.lblFilm.TabIndex = 0;
+            this.lblFilm.Text = "Film";
             // 
-            // txtDataZakupu
+            // txtKlient
             // 
-            this.txtDataZakupu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.txtDataZakupu.Location = new System.Drawing.Point(193, 262);
-            this.txtDataZakupu.Name = "txtDataZakupu";
-            this.txtDataZakupu.Size = new System.Drawing.Size(220, 26);
-            this.txtDataZakupu.TabIndex = 11;
+            this.txtKlient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.txtKlient.Location = new System.Drawing.Point(193, 178);
+            this.txtKlient.Name = "txtKlient";
+            this.txtKlient.Size = new System.Drawing.Size(220, 26);
+            this.txtKlient.TabIndex = 7;
             // 
-            // btnZamknij
+            // lblKlient
             // 
-            this.btnZamknij.Location = new System.Drawing.Point(415, 324);
-            this.btnZamknij.Name = "btnZamknij";
-            this.btnZamknij.Size = new System.Drawing.Size(78, 30);
-            this.btnZamknij.TabIndex = 12;
-            this.btnZamknij.Text = "Zamknij";
-            this.btnZamknij.UseVisualStyleBackColor = true;
-            this.btnZamknij.Click += new System.EventHandler(this.btnZamknij_Click);
+            this.lblKlient.AutoSize = true;
+            this.lblKlient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.lblKlient.Location = new System.Drawing.Point(57, 181);
+            this.lblKlient.Name = "lblKlient";
+            this.lblKlient.Size = new System.Drawing.Size(51, 20);
+            this.lblKlient.TabIndex = 6;
+            this.lblKlient.Text = "Klient";
             // 
             // BiletyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 561);
+            this.ClientSize = new System.Drawing.Size(800, 571);
             this.Controls.Add(this.groupBoxDetails);
             this.Controls.Add(this.btnUsun);
             this.Controls.Add(this.btnDrukuj);
